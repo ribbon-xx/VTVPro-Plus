@@ -106,7 +106,9 @@ public class ListCategoryInEventFragment extends BaseFragment {
 
 		@Override
 		public Fragment getItem(int position) {
-			if (position==2) {
+			if (position == 0){
+				return new MatchScheduleFragment();
+			} else if (position==2) {
 				return new RankingsFragment();
 			}
 			return TestFragment.newInstance(mTabName[position % mTabName.length]);

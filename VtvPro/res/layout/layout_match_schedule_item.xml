@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:paddingTop="@dimen/padding_10dp"
+              android:paddingBottom="@dimen/padding_10dp"
+              android:weightSum="10">
+    <TextView
+            android:id="@+id/layout_match_schedule_item_time"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="3"/>
+
+    <TextView
+            android:id="@+id/layout_match_schedule_item_left_team"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:layout_weight="3"/>
+
+    <TextView
+            android:id="@+id/layout_match_schedule_item_result"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:text="@string/versus"/>
+    <TextView
+            android:id="@+id/layout_match_schedule_item_right_team"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:layout_weight="3"/>
+
+</LinearLayout>

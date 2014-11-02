@@ -39,5 +39,9 @@
 
     <color name="button_divider">#666</color>
     <color name="button_pressed_color">#0099cc</color>
-	
+
+    <!-- Event -->
+    <color name="list_header_background">#e2e2e2</color>
+    <color name="list_footer_background">#4a4a63</color>
+	<color name="white">#ffffff</color>
 </resources>

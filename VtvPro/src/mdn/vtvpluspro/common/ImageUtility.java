@@ -73,7 +73,6 @@ public class ImageUtility {
 				.bitmapConfig(Bitmap.Config.RGB_565)
 				.showImageForEmptyUri(R.drawable.no_image)
 				.showImageOnFail(R.drawable.no_image)
-				.imageScaleType(ImageScaleType.EXACTLY_STRETCHED)
 				.showStubImage(R.drawable.no_image).build();
 	}
 

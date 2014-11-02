@@ -357,4 +357,17 @@ public class WebServiceConfig {
 	public static String getUrlCheckAppId(String appId) {
 		return "http://203.162.235.124/Vietnet/service.php?action=GetAppId&Appid=" + appId;
 	}
+
+    public static String getListMatchSchedule(long leagueCode) {
+        StringBuilder strBuilder = new StringBuilder(getServer());
+        strBuilder.append("fb/home/");
+        strBuilder.append(leagueCode + "/");
+        return strBuilder.toString();
+    }
+
+    public static String getListMatchScheduleMenuItem() {
+        StringBuilder strBuilder = new StringBuilder(getServer());
+        strBuilder.append("fb/menu/");
+        return strBuilder.toString();
+    }
 }

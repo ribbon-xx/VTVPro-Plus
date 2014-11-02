@@ -309,4 +309,13 @@ public final class ApiManager {
 				}, paraList);
 		asyncHttpPost.execute(url);
 	}
+
+    public static void callListMatchSchedule(Context context,
+                                    IApiCallback apiCallback, long leagueCode) {
+        callHttpGet(context, apiCallback, WebServiceConfig.getListMatchSchedule(leagueCode), false);
+    }
+
+    public static void callListMatchScheduleMenuItem(Context context, IApiCallback apiCallback) {
+        callHttpGet(context, apiCallback, WebServiceConfig.getListMatchScheduleMenuItem(), false);
+    }
 }

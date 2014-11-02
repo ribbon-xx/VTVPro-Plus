@@ -137,10 +137,13 @@
     <string name="charging_operator_not_found">Không thấy thông tin đăng ký cho mạng mà bạn đang dùng</string>
     
     <!-- event -->
+    <string name="event_select_title">Chọn</string>
     <string name="event_schedule">Lịch thi đấu</string>
     <string name="event_result">Kết quả</string>
     <string name="event_rankings">Bảng xếp hạng</string>
-    
+
+    <string name="versus">vs</string>
+    <string name="footer">VTVPLUS</string>
     <string-array name="tab_event">
         <item>Lịch thi đấu</item>
         <item>Kết quả</item>
