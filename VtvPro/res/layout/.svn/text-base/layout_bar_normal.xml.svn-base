@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/base_title_height"
+    android:background="@color/base_title_color"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/iconSetting"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/button_selector"
+        android:gravity="center"
+        android:paddingLeft="@dimen/base_title_padding"
+        android:paddingRight="@dimen/base_title_padding" >
+
+        <ImageView
+            android:layout_width="@dimen/base_title_icon_setting_width"
+            android:layout_height="@dimen/base_title_icon_height"
+            android:background="@drawable/icon_setting"
+            android:contentDescription="@string/app_name" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/iconBack"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/button_selector"
+        android:gravity="center"
+        android:paddingLeft="@dimen/base_title_padding"
+        android:paddingRight="@dimen/base_title_padding"
+        android:visibility="gone" >
+
+        <ImageView
+            android:layout_width="@dimen/base_title_icon_height"
+            android:layout_height="@dimen/base_title_icon_height"
+            android:background="@drawable/icon_back"
+            android:contentDescription="@string/app_name" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iconVtvPlus"
+        android:layout_width="@dimen/base_title_icon_vtvplus_width"
+        android:layout_height="@dimen/base_title_icon_height"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY"
+        android:src="@drawable/icon_vtvplus"
+        android:visibility="gone" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:id="@+id/iconSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/button_selector"
+        android:gravity="center"
+        android:paddingLeft="@dimen/base_title_padding"
+        android:paddingRight="@dimen/base_title_padding" >
+
+        <ImageView
+            android:layout_width="@dimen/base_title_icon_search_width"
+            android:layout_height="@dimen/base_title_icon_height"
+            android:background="@drawable/icon_search"
+            android:contentDescription="@string/app_name" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iconInteract"
+        android:layout_width="@dimen/player_info_player_plus_btn_width"
+        android:layout_height="@dimen/player_info_player_plus_btn_height"
+        android:contentDescription="@string/app_name"
+        android:paddingRight="@dimen/padding_5dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/btn_plus" />
+
+</LinearLayout>

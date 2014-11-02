@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white" >
+
+    <RelativeLayout
+        android:id="@+id/layoutPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@android:color/black" >
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutInfo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layoutPlayer"
+        android:orientation="vertical" >
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/player_info_tab_height"
+            android:background="@color/base_title_color"
+            android:baselineAligned="false"
+            android:orientation="horizontal" >
+
+<!--             <RelativeLayout -->
+<!--                 android:id="@+id/tabAbout" -->
+<!--                 android:layout_width="0dp" -->
+<!--                 android:layout_height="match_parent" -->
+<!--                 android:layout_weight="1" -->
+<!--                 android:background="@drawable/button_selector" > -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/tabAboutText" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_centerInParent="true" -->
+<!--                     android:text="@string/details_info_about" -->
+<!--                     android:textColor="@android:color/white" /> -->
+
+<!--                 <View -->
+<!--                     android:id="@+id/tabAboutFocus" -->
+<!--                     android:layout_width="match_parent" -->
+<!--                     android:layout_height="@dimen/base_title_divider_height" -->
+<!--                     android:layout_alignParentBottom="true" -->
+<!--                     android:background="@color/baset_title_divider_color" /> -->
+<!--             </RelativeLayout> -->
+
+<!--             <RelativeLayout -->
+<!--                 android:id="@+id/tabSchedule" -->
+<!--                 android:layout_width="0dp" -->
+<!--                 android:layout_height="match_parent" -->
+<!--                 android:layout_weight="1" -->
+<!--                 android:background="@drawable/button_selector" > -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/tabScheduleText" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_centerInParent="true" -->
+<!--                     android:text="@string/details_info_schedule" -->
+<!--                     android:textColor="@android:color/white" /> -->
+
+<!--                 <View -->
+<!--                     android:id="@+id/tabScheduleFocus" -->
+<!--                     android:layout_width="match_parent" -->
+<!--                     android:layout_height="@dimen/base_title_divider_height" -->
+<!--                     android:layout_alignParentBottom="true" -->
+<!--                     android:background="@color/baset_title_divider_color" -->
+<!--                     android:visibility="gone" /> -->
+<!--             </RelativeLayout> -->
+
+            <RelativeLayout
+                android:id="@+id/tabRelated"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/button_selector" >
+
+                <TextView
+                    android:id="@+id/tabRelatedText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/details_info_related_channel"
+                    android:textColor="@android:color/white" />
+
+                <View
+                    android:id="@+id/tabRelatedFocus"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/base_title_divider_height"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/baset_title_divider_color"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </LinearLayout>
+        
+        <android.support.v4.view.ViewPager
+            android:id="@+id/layInfoPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab"
+            android:id="@+id/tab_event"
+            android:gravity="center" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_sukien" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/slidemenu_event"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/white" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab"
+            android:id="@+id/tab_channel"
+            android:gravity="center" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_kenh" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/slidemenu_channel"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/white" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/tab_video"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab"
+            android:gravity="center" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_movie" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/slidemenu_video"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </LinearLayout>
+    
+     <com.handmark.pulltorefreshscrollview.library.PullToRefreshScrollView
+        android:id="@+id/pull_home_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:scrollbars="none"
+        ptr:ptrAnimationStyle="flip"
+        ptr:ptrMode="pullDownFromTop" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/layoutGallery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" >
+
+                <mdn.vtvpluspro.library.viewflow.ViewFlow
+                    android:id="@+id/galHomeBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+                </mdn.vtvpluspro.library.viewflow.ViewFlow>
+
+                <mdn.vtvpluspro.library.viewflow.CircleFlowIndicator
+                    android:id="@+id/indHomeGallery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/galHomeBanner"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp" />
+            </RelativeLayout>
+
+            <ListView
+                android:id="@+id/grChannel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:cacheColorHint="@android:color/transparent"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="@dimen/padding_channel"
+                android:scrollbars="none" >
+            </ListView>
+        </LinearLayout>
+    </com.handmark.pulltorefreshscrollview.library.PullToRefreshScrollView>
+
+</LinearLayout>

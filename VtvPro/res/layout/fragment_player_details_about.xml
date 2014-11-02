@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/details_schedule_list_server_background"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:id="@+id/layoutListStream"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/details_schedule_list_server_background"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical" >
+
+            <ImageView
+                android:id="@+id/detailsChannelIcon"
+                android:layout_width="@dimen/player_info_schedule_icon_size"
+                android:layout_height="@dimen/player_info_schedule_icon_size"
+                android:layout_margin="@dimen/player_info_schedule_icon_padding" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/detailsChannelName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/player_info_schedule_icon_padding_less"
+                    android:text="MTV - Music Television"
+                    android:textSize="@dimen/text_size_small"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/detailsChannelView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/view"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textSize="@dimen/text_size_tiny" />
+
+                    <TextView
+                        android:id="@+id/detailsChannelLike"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/like"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textSize="@dimen/text_size_tiny" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/player_info_schedule_icon_padding"
+                    android:layout_marginTop="@dimen/player_info_schedule_icon_padding" >
+
+                    <ImageView
+                        android:id="@+id/detailsLikeChannel"
+                        android:layout_width="@dimen/player_info_schedule_icon_action_size"
+                        android:layout_height="@dimen/player_info_schedule_icon_action_size"
+                        android:layout_marginRight="@dimen/player_info_schedule_icon_padding_more"
+                        android:background="@drawable/icon_like" />
+
+                    <ImageView
+                        android:id="@+id/detailsFavoriteChannel"
+                        android:layout_width="@dimen/player_info_schedule_icon_action_size"
+                        android:layout_height="@dimen/player_info_schedule_icon_action_size"
+                        android:background="@drawable/icon_favorite" />
+
+                    <ImageView
+                        android:id="@+id/detailsShareChannel"
+                        android:layout_width="@dimen/player_info_schedule_icon_action_size"
+                        android:layout_height="@dimen/player_info_schedule_icon_action_size"
+                        android:layout_marginLeft="@dimen/player_info_schedule_icon_padding_more"
+                        android:background="@drawable/icon_share" />
+
+                    <ImageView
+                        android:id="@+id/detailsAlarmChannel"
+                        android:layout_width="@dimen/player_info_schedule_icon_action_size"
+                        android:layout_height="@dimen/player_info_schedule_icon_action_size"
+                        android:layout_marginLeft="@dimen/player_info_schedule_icon_padding_more"
+                        android:background="@drawable/icon_clock" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/detailsTextShedule"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hẹn giờ:"
+                    android:textColor="@color/baset_title_divider_color"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/details_schedule_divider"
+        android:visibility="gone" />
+
+</LinearLayout>

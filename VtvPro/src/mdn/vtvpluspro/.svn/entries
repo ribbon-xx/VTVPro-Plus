@@ -1,0 +1,183 @@
+10
+
+dir
+207
+https://jupitech.unfuddle.com/svn/jupitech_vtvplus/Android/Code/VTVPro/src/mdn/vtvpluspro
+https://jupitech.unfuddle.com/svn/jupitech_vtvplus
+
+
+
+2014-05-07T07:01:49.464039Z
+204
+xuyendm
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+10749a45-9176-453f-a518-949f5141ae12
+
+BaseSlideMenuActivity.java
+file
+218
+
+
+
+2014-08-11T03:07:25.000000Z
+37e8902f5a21668353bef5e8813f3c88
+2014-07-30T10:11:06.614746Z
+218
+cuongpm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+23193
+
+Config.java
+file
+0
+
+
+add
+
+GCMIntentService.java
+file
+
+
+
+
+2014-07-18T04:46:34.000000Z
+a303dd26b57ca7d6723a7234b66be62c
+2014-04-29T14:19:08.481455Z
+199
+xuyendm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5782
+
+MessageReceiver.java
+file
+0
+
+
+add
+
+SplashScreenActivity.java
+file
+
+
+
+
+2014-08-11T03:07:25.000000Z
+08571140ca2374704da01c53560c47c6
+2014-04-29T14:19:08.481455Z
+199
+xuyendm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1074
+
+adapter
+dir
+
+alarm
+dir
+
+common
+dir
+
+dialogs
+dir
+
+facebook
+dir
+
+fragment
+dir
+
+gcm
+dir
+
+library
+dir
+
+network
+dir
+
+object
+dir
+
+parsexml
+dir
+
+slidingmenu
+dir
+
+util
+dir
+

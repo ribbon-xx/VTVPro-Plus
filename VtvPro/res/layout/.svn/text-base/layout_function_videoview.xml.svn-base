@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent" >
+
+    <Button
+        android:id="@+id/btRegCharge"
+        android:layout_width="@dimen/width_button"
+        android:layout_height="@dimen/player_info_tab_height"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/padding_5dp"
+        android:background="@drawable/bg_button_account"
+        android:gravity="center"
+        android:text="@string/muagoicuoc1"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_small" />
+
+    <LinearLayout
+        android:id="@+id/viewNotCharge"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/player_control_size"
+        android:paddingRight="@dimen/padding_10dp"
+        android:background="@color/bg_control"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/imvLockPlayer"
+            android:layout_width="@dimen/player_control_size"
+            android:layout_height="@dimen/player_control_size"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:background="@drawable/button_selector"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_lock_screen_player" />
+
+        <ImageView
+            android:id="@+id/imvFullScreenPlayer"
+            android:layout_width="@dimen/player_control_size"
+            android:layout_height="@dimen/player_control_size"
+            android:layout_marginLeft="@dimen/padding_5dp"
+            android:background="@drawable/button_selector"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_full_screen_player" />
+    </LinearLayout>
+
+</RelativeLayout>

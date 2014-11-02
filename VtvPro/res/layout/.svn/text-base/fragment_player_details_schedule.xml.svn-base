@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ListView
+        android:id="@+id/lvSchedule"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@color/details_schedule_list"
+        android:dividerHeight="1px"
+        android:listSelector="@android:color/transparent"
+        android:padding="@dimen/padding_10dp"
+        android:scrollbars="none" >
+    </ListView>
+
+    <TextView
+        android:id="@+id/tvNoItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:padding="@dimen/padding_10dp"
+        android:text="@string/no_item_schedule"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_size_small" />
+
+    <ProgressBar
+        android:id="@+id/progressLoad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+</RelativeLayout>

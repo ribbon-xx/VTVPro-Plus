@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/splash_padding" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent" >
+
+        <TextView
+            android:id="@+id/tvNoCharge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_edit_text_account"
+            android:gravity="center"
+            android:minHeight="100dp"
+            android:padding="@dimen/padding_10dp"
+            android:text="@string/not_regis"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_normal"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/layInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_10dp"
+                android:text="@string/taikhoan"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:id="@+id/tvUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_5dp"
+                android:background="@drawable/bg_edit_text_account"
+                android:gravity="center"
+                android:padding="@dimen/padding_5dp"
+                android:textColor="@color/button_focus_color"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_10dp"
+                android:text="@string/goicouc"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:id="@+id/tvCurrentService"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_5dp"
+                android:background="@drawable/bg_edit_text_account"
+                android:gravity="center"
+                android:padding="@dimen/padding_5dp"
+                android:textColor="@color/button_focus_color"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_10dp"
+                android:text="@string/hansudung"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:id="@+id/tvExpiryDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_5dp"
+                android:background="@drawable/bg_edit_text_account"
+                android:gravity="center"
+                android:padding="@dimen/padding_5dp"
+                android:textColor="@color/button_focus_color"
+                android:textSize="@dimen/text_size_normal" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btLogout"
+        android:layout_width="@dimen/width_button"
+        android:layout_height="@dimen/player_info_tab_height"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/padding_20dp"
+        android:background="@drawable/bg_button_account"
+        android:gravity="center"
+        android:text="@string/logout"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_normal" />
+
+    <Button
+        android:id="@+id/btRegCharge"
+        android:layout_width="@dimen/width_button"
+        android:layout_height="@dimen/player_info_tab_height"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/padding_10dp"
+        android:background="@drawable/bg_button_account"
+        android:gravity="center"
+        android:text="@string/muagoicuoc1"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_normal" />
+
+</LinearLayout>

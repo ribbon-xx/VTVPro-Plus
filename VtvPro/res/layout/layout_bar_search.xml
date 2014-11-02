@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/base_title_height"
+    android:background="@color/base_title_color"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="@dimen/padding_5dp" >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="@dimen/base_title_icon_height"
+        android:layout_weight="1"
+        android:background="@drawable/bg_tv_search"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/padding_5dp"
+        android:paddingRight="@dimen/padding_5dp" >
+
+        <ImageView
+            android:id="@+id/imvSmallSearch"
+            android:layout_width="@dimen/base_title_icon_height"
+            android:layout_height="@dimen/base_title_icon_height"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_small_search" />
+
+        <EditText
+            android:id="@+id/edSearchBanner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/base_title_icon_height"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical"
+            android:inputType="text"
+            android:paddingLeft="@dimen/padding_5dp"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:imeOptions="actionSearch"
+            android:textSize="@dimen/text_size_normal" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSearchCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/base_title_icon_height"
+        android:background="@android:color/transparent"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/padding_10dp"
+        android:text="@string/cancel"
+        android:textColor="@color/selector_color_cancel_search"
+        android:textSize="@dimen/text_size_normal" />
+
+</LinearLayout>

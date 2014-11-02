@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/src/mdn/vtvpluspro/network
+END
+NetworkUtility.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/src/mdn/vtvpluspro/network/NetworkUtility.java
+END
+AsyncHttpPostJson.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/src/mdn/vtvpluspro/network/AsyncHttpPostJson.java
+END
+WebServiceParam.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/src/mdn/vtvpluspro/network/WebServiceParam.java
+END
+WebServiceUtility.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/src/mdn/vtvpluspro/network/WebServiceUtility.java
+END
+AsyncHttpUploadFeedback.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/src/mdn/vtvpluspro/network/AsyncHttpUploadFeedback.java
+END
+AsyncHttpResponseProcess.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/src/mdn/vtvpluspro/network/AsyncHttpResponseProcess.java
+END
+AsyncHttpResponseListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/src/mdn/vtvpluspro/network/AsyncHttpResponseListener.java
+END
+MySSLSocketFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/src/mdn/vtvpluspro/network/MySSLSocketFactory.java
+END
+IApiCallback.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/src/mdn/vtvpluspro/network/IApiCallback.java
+END
+AsyncHttpBase.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/src/mdn/vtvpluspro/network/AsyncHttpBase.java
+END
+AsyncHttpPost.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/src/mdn/vtvpluspro/network/AsyncHttpPost.java
+END
+ApiManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/src/mdn/vtvpluspro/network/ApiManager.java
+END
+WebServiceConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/src/mdn/vtvpluspro/network/WebServiceConfig.java
+END
+AsyncHttpGet.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/src/mdn/vtvpluspro/network/AsyncHttpGet.java
+END

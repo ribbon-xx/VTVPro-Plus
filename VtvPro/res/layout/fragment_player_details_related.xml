@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <GridView
+        android:id="@+id/grdRelatedChannel"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/padding_channel"
+        android:layout_marginRight="@dimen/padding_channel"
+        android:layout_marginTop="@dimen/padding_channel"
+        android:background="@android:color/transparent"
+        android:cacheColorHint="@android:color/transparent"
+        android:horizontalSpacing="@dimen/padding_channel"
+        android:listSelector="@null"
+        android:numColumns="2"
+        android:scrollbarSize="0dp"
+        android:scrollbars="none"
+        android:verticalSpacing="@dimen/padding_channel" >
+    </GridView>
+
+    <LinearLayout
+        android:id="@+id/layLoading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/padding_5dp"
+        android:orientation="horizontal" >
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="@string/pull_to_refresh_refreshing_label"
+            android:textAppearance="?android:attr/textAppearance" />
+    </LinearLayout>
+
+</LinearLayout>

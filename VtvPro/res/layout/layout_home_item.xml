@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white" >
+
+    <ImageView
+        android:id="@+id/recipesIcon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY" />
+
+    <LinearLayout
+        android:id="@+id/homeItemLayBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/home_bg_item"
+        android:gravity="center_vertical" >
+
+        <ImageView
+            android:id="@+id/homeItemIconSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="2dp"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitXY" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/padding_channel"
+            android:layout_weight="1"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/homeItemTvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/home_item_textsize"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/homeItemTvView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/homeItemTvName"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/home_item_textsize_like" />
+
+<!--             <TextView -->
+<!--                 android:id="@+id/homeItemTvLike" -->
+<!--                 android:layout_width="wrap_content" -->
+<!--                 android:layout_height="wrap_content" -->
+<!--                 android:layout_alignTop="@id/homeItemTvView" -->
+<!--                 android:layout_below="@id/homeItemTvName" -->
+<!--                 android:layout_toRightOf="@id/homeItemTvView" -->
+<!--                 android:drawableRight="@drawable/like" -->
+<!--                 android:ellipsize="end" -->
+<!--                 android:singleLine="true" -->
+<!--                 android:text="" -->
+<!--                 android:textColor="@android:color/white" -->
+<!--                 android:textSize="@dimen/home_item_textsize_like" /> -->
+        </RelativeLayout>
+
+<!--         <ImageView -->
+<!--             android:id="@+id/homeItemLock" -->
+<!--             android:layout_width="wrap_content" -->
+<!--             android:layout_height="match_parent" -->
+<!--             android:layout_gravity="center_vertical" -->
+<!--             android:contentDescription="@string/app_name" -->
+<!--             android:padding="5dp" -->
+<!--             android:scaleType="fitXY" -->
+<!--             android:src="@drawable/look" /> -->
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,73 @@
+10
+
+dir
+207
+https://jupitech.unfuddle.com/svn/jupitech_vtvplus/Android/Code/VTVPro/res
+https://jupitech.unfuddle.com/svn/jupitech_vtvplus
+
+
+
+2014-05-05T06:43:05.259694Z
+201
+xuyendm
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+10749a45-9176-453f-a518-949f5141ae12
+
+anim
+dir
+
+color
+dir
+
+drawable
+dir
+
+drawable-hdpi
+dir
+
+drawable-ldpi
+dir
+
+drawable-mdpi
+dir
+
+drawable-xhdpi
+dir
+
+drawable-xxhdpi
+dir
+
+layout
+dir
+
+menu
+dir
+
+values
+dir
+
+values-sw600dp
+dir
+
+values-sw720dp-land
+dir
+
+values-v11
+dir
+
+values-v14
+dir
+

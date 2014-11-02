@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/jupitech_vtvplus/!svn/ver/185/Android/Code/vitamio_pro/src/io/vov/vitamio/utils
+END
+StringUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/jupitech_vtvplus/!svn/ver/185/Android/Code/vitamio_pro/src/io/vov/vitamio/utils/StringUtils.java
+END
+IOUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/jupitech_vtvplus/!svn/ver/185/Android/Code/vitamio_pro/src/io/vov/vitamio/utils/IOUtils.java
+END
+CPU.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/jupitech_vtvplus/!svn/ver/185/Android/Code/vitamio_pro/src/io/vov/vitamio/utils/CPU.java
+END
+Device.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/jupitech_vtvplus/!svn/ver/185/Android/Code/vitamio_pro/src/io/vov/vitamio/utils/Device.java
+END
+FileUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/jupitech_vtvplus/!svn/ver/185/Android/Code/vitamio_pro/src/io/vov/vitamio/utils/FileUtils.java
+END
+Log.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/jupitech_vtvplus/!svn/ver/185/Android/Code/vitamio_pro/src/io/vov/vitamio/utils/Log.java
+END
+ContextUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/jupitech_vtvplus/!svn/ver/185/Android/Code/vitamio_pro/src/io/vov/vitamio/utils/ContextUtils.java
+END
+Crypto.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/jupitech_vtvplus/!svn/ver/185/Android/Code/vitamio_pro/src/io/vov/vitamio/utils/Crypto.java
+END

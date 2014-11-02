@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="slideMenuStyle" format="reference" />
+
+    <declare-styleable name="SlideMenu_Layout">
+        <attr name="layout_role" format="enum">
+            <enum name="content" value="0" />
+            <enum name="primaryMenu" value="1" />
+            <enum name="secondaryMenu" value="2" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="SlideMenu">
+        <attr name="primaryShadowWidth" format="dimension" />
+        <attr name="secondaryShadowWidth" format="dimension" />
+        <attr name="primaryShadowDrawable" format="reference" />
+        <attr name="sencondaryShadowDrawable" format="reference" />
+        <attr name="slideDirection" format="flags">
+            <flag name="left" value="1" />
+            <flag name="right" value="2" />
+        </attr>
+        <attr name="interpolator" format="reference" />
+    </declare-styleable>
+
+    <!-- Pull to Refresh Listview -->
+    <declare-styleable name="PullToRefresh">
+        <attr name="ptrDrawableEnd" format="reference" />
+        <attr name="ptrScrollingWhileRefreshingEnabled" format="reference|boolean" />
+        <attr name="ptrDrawableStart" format="reference" />
+        <attr name="ptrRefreshableViewBackground" format="reference|color" />
+        <attr name="ptrRotateDrawableWhilePulling" format="reference|boolean" />
+        <attr name="ptrAdapterViewBackground" format="reference|color" />
+        <attr name="ptrHeaderBackground" format="reference|color" />
+        <attr name="ptrHeaderTextColor" format="reference|color" />
+        <attr name="ptrHeaderSubTextColor" format="reference|color" />
+        <attr name="ptrMode">
+            <flag name="disabled" value="0x0" />
+            <flag name="pullDownFromTop" value="0x1" />
+            <flag name="pullUpFromBottom" value="0x2" />
+            <flag name="both" value="0x3" />
+        </attr>
+        <attr name="ptrShowIndicator" format="reference|boolean" />
+        <attr name="ptrDrawable" format="reference" />
+        <attr name="ptrDrawableTop" format="reference" />
+        <attr name="ptrDrawableBottom" format="reference" />
+        <attr name="ptrOverScroll" format="reference|boolean" />
+        <attr name="ptrHeaderTextAppearance" format="reference" />
+        <attr name="ptrSubHeaderTextAppearance" format="reference" />
+        <attr name="ptrAnimationStyle">
+            <flag name="rotate" value="0x0" />
+            <flag name="flip" value="0x1" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="CustomView">
+        <attr name="customFont" format="string" />
+        <attr name="customTextStyle" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="ViewFlow">
+        <attr name="sidebuffer" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="CircleFlowIndicator">
+        <attr name="activeColor" format="color" />
+        <attr name="inactiveColor" format="color" />
+        <attr name="radius1" format="dimension" />
+        <attr name="centered1" format="boolean" />
+        <attr name="fadeOut" format="integer" />
+        <attr name="inactiveType">
+            <flag name="stroke" value="0" />
+            <flag name="fill" value="1" />
+        </attr>
+        <attr name="activeType">
+            <flag name="stroke" value="0" />
+            <flag name="fill" value="1" />
+        </attr>
+    </declare-styleable>
+    
+    
+    
+    <declare-styleable name="SlidingMenu">
+        <attr name="mode">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+        <attr name="viewAbove" format="reference" />
+        <attr name="viewBehind" format="reference" />
+        <attr name="behindOffset" format="dimension" />
+        <attr name="behindWidth" format="dimension" />
+        <attr name="behindScrollScale" format="float" />
+        <attr name="touchModeAbove">
+            <enum name="margin" value="0" />
+            <enum name="fullscreen" value="1" />
+        </attr>
+        <attr name="touchModeBehind">
+            <enum name="margin" value="0" />
+            <enum name="fullscreen" value="1" />
+        </attr>
+        <attr name="shadowDrawable" format="reference" />
+        <attr name="shadowWidth" format="dimension" />
+        <attr name="fadeEnabled" format="boolean" />
+        <attr name="fadeDegree" format="float" />
+        <attr name="selectorEnabled" format="boolean" />
+        <attr name="selectorDrawable" format="reference" />
+    </declare-styleable>
+
+</resources>

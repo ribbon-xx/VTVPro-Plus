@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/src/com/handmark/pulltorefreshscrollview/library
+END
+OverscrollHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/src/com/handmark/pulltorefreshscrollview/library/OverscrollHelper.java
+END
+PullToRefreshScrollView.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/src/com/handmark/pulltorefreshscrollview/library/PullToRefreshScrollView.java
+END
+ILoadingLayout.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/src/com/handmark/pulltorefreshscrollview/library/ILoadingLayout.java
+END
+PullToRefreshBase.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/src/com/handmark/pulltorefreshscrollview/library/PullToRefreshBase.java
+END
+PullToRefreshAdapterViewBase.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/src/com/handmark/pulltorefreshscrollview/library/PullToRefreshAdapterViewBase.java
+END
+LoadingLayoutProxy.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/src/com/handmark/pulltorefreshscrollview/library/LoadingLayoutProxy.java
+END
+IPullToRefresh.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/src/com/handmark/pulltorefreshscrollview/library/IPullToRefresh.java
+END

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/splash_padding" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_10dp"
+        android:text="@string/user_name"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_size_normal" />
+
+    <EditText
+        android:id="@+id/edUserName"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/player_info_tab_height"
+        android:layout_marginTop="@dimen/padding_5dp"
+        android:background="@drawable/bg_edit_text_account"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="@dimen/padding_10dp"
+        android:paddingRight="@dimen/padding_5dp"
+        android:singleLine="true"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_size_normal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_10dp"
+        android:text="@string/password"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_size_normal" />
+
+    <EditText
+        android:id="@+id/edPassword"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/player_info_tab_height"
+        android:layout_marginTop="@dimen/padding_5dp"
+        android:background="@drawable/bg_edit_text_account"
+        android:inputType="textPassword"
+        android:paddingLeft="@dimen/padding_10dp"
+        android:paddingRight="@dimen/padding_5dp"
+        android:singleLine="true"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_size_normal" />
+
+    <Button
+        android:id="@+id/btLogin"
+        android:layout_width="@dimen/width_button"
+        android:layout_height="@dimen/player_info_tab_height"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/padding_20dp"
+        android:background="@drawable/bg_button_account"
+        android:gravity="center"
+        android:text="@string/login"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_normal" />
+
+    <Button
+        android:id="@+id/btRegis"
+        android:layout_width="@dimen/width_button"
+        android:layout_height="@dimen/player_info_tab_height"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/padding_10dp"
+        android:background="@drawable/bg_button_account"
+        android:gravity="center"
+        android:text="@string/regis"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_normal" />
+
+</LinearLayout>

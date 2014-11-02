@@ -1,0 +1,276 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:background="@drawable/bg_footer"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+         >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/padding_5dp"
+            android:paddingLeft="@dimen/padding_10dp"
+            android:paddingTop="@dimen/padding_5dp"
+            android:text="@string/taikhoan"
+            android:textColor="@color/text_menu"
+            android:textSize="@dimen/text_size_small" />
+
+        <LinearLayout
+            android:id="@+id/layMenuLogin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/base_title_height"
+            android:background="@drawable/button_selector"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="@dimen/icon_menu_size"
+                android:layout_height="@dimen/icon_menu_size"
+                android:layout_marginLeft="@dimen/padding_10dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_profile_menu" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_10dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="@string/dangnhap"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_normal" />
+
+            <ImageView
+                android:layout_width="@dimen/icon_menu_size"
+                android:layout_height="@dimen/icon_menu_size"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                android:src="@drawable/arrow_menu" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layMenuProfile"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/base_title_height"
+            android:background="@drawable/button_selector"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/imvProfile"
+                android:layout_width="@dimen/icon_menu_size_large"
+                android:layout_height="@dimen/icon_menu_size_large"
+                android:layout_marginLeft="@dimen/padding_10dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_profile_menu" />
+
+            <TextView
+                android:id="@+id/tvNameLogin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_10dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="left"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_normal" />
+
+            <ImageView
+                android:layout_width="@dimen/icon_menu_size"
+                android:layout_height="@dimen/icon_menu_size"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                android:src="@drawable/arrow_menu" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/line_listview" />
+
+        <LinearLayout
+            android:id="@+id/layMenuSetting"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/base_title_height"
+            android:background="@drawable/button_selector"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <ImageView
+                android:layout_width="@dimen/icon_menu_size"
+                android:layout_height="@dimen/icon_menu_size"
+                android:layout_marginLeft="@dimen/padding_10dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_caidat_menu" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_10dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="@string/caidat"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_normal" />
+
+            <ImageView
+                android:layout_width="@dimen/icon_menu_size"
+                android:layout_height="@dimen/icon_menu_size"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                android:src="@drawable/arrow_menu" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lv_video"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="#00000000"
+            android:dividerHeight="1dp"
+            android:divider="@drawable/line_listview"
+             >
+        </ListView>
+        
+<!--         <TextView -->
+<!--             android:layout_width="match_parent" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:background="@color/categories_title_divider" -->
+<!--             android:paddingBottom="@dimen/padding_5dp" -->
+<!--             android:paddingLeft="@dimen/padding_10dp" -->
+<!--             android:paddingTop="@dimen/padding_5dp" -->
+<!--             android:text="@string/slidemenu_event" -->
+<!--             android:textColor="@color/text_menu" -->
+<!--             android:textSize="@dimen/text_size_small" /> -->
+
+
+<!--         <TextView -->
+<!--         android:id="@+id/tvLichthidau" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="@dimen/base_title_height" -->
+<!--         android:paddingLeft="@dimen/padding_10dp" -->
+<!--         android:background="@drawable/button_selector" -->
+<!--         android:gravity="center_vertical" -->
+<!--         android:text="@string/slidemenu_lichthidau" -->
+<!--         android:textColor="@android:color/white" -->
+<!--         android:textSize="@dimen/text_size_normal" /> -->
+
+
+<!--         <View -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="2dp" -->
+<!--         android:background="@drawable/line_listview" /> -->
+
+
+<!--         <TextView -->
+<!--         android:id="@+id/tvNapTien" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="@dimen/base_title_height" -->
+<!--         android:paddingLeft="@dimen/padding_10dp" -->
+<!--         android:background="@drawable/button_selector" -->
+<!--         android:gravity="center_vertical" -->
+<!--         android:text="@string/naptiensmart" -->
+<!--         android:textColor="@android:color/white" -->
+<!--         android:textSize="@dimen/text_size_normal" -->
+<!--         android:visibility="gone" /> -->
+
+
+<!--         <View -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="2dp" -->
+<!--         android:background="@drawable/line_listview" -->
+<!--         android:visibility="gone" /> -->
+
+
+       
+
+<!--         <TextView -->
+<!--         android:id="@+id/tvLivescore" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="@dimen/base_title_height" -->
+<!--         android:paddingLeft="@dimen/padding_10dp" -->
+<!--         android:background="@drawable/button_selector" -->
+<!--         android:gravity="center_vertical" -->
+<!--         android:text="@string/slidemenu_livescore" -->
+<!--         android:textColor="@android:color/white" -->
+<!--         android:textSize="@dimen/text_size_normal" /> -->
+
+
+<!--         <View -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="2dp" -->
+<!--         android:background="@drawable/line_listview" /> -->
+
+
+<!--         <TextView -->
+<!--         android:id="@+id/tvXephang" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="@dimen/base_title_height" -->
+<!--         android:paddingLeft="@dimen/padding_10dp" -->
+<!--         android:background="@drawable/button_selector" -->
+<!--         android:gravity="center_vertical" -->
+<!--         android:text="@string/slidemenu_xephang" -->
+<!--         android:textColor="@android:color/white" -->
+<!--         android:textSize="@dimen/text_size_normal" /> -->
+
+
+<!--         <View -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="2dp" -->
+<!--         android:background="@drawable/line_listview" /> -->
+
+
+<!--         <TextView -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:background="@color/categories_title_divider" -->
+<!--         android:paddingBottom="@dimen/padding_5dp" -->
+<!--         android:paddingLeft="@dimen/padding_10dp" -->
+<!--         android:paddingTop="@dimen/padding_5dp" -->
+<!--         android:text="@string/slidemenu_video" -->
+<!--         android:textColor="@color/text_menu" -->
+<!--         android:textSize="@dimen/text_size_small" /> -->
+
+
+        <!-- <View -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="2dp" -->
+        <!-- android:background="@drawable/line_listview" /> -->
+
+
+<!--         <TextView -->
+<!--         android:id="@+id/tvXephang" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="@dimen/base_title_height" -->
+<!--         android:paddingLeft="@dimen/padding_10dp" -->
+<!--         android:background="@drawable/button_selector" -->
+<!--         android:gravity="center_vertical" -->
+<!--         android:text="@string/slidemenu_xephang" -->
+<!--         android:textColor="@android:color/white" -->
+<!--         android:textSize="@dimen/text_size_normal" /> -->
+
+
+        <!-- <TextView -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:background="@color/categories_title_divider" -->
+        <!-- android:paddingBottom="@dimen/padding_5dp" -->
+        <!-- android:paddingLeft="@dimen/padding_10dp" -->
+        <!-- android:paddingTop="@dimen/padding_5dp" -->
+        <!-- android:text="@string/slidemenu_channel" -->
+        <!-- android:textColor="@color/text_menu" -->
+        <!-- android:textSize="@dimen/text_size_small" /> -->
+
+    </LinearLayout>
+
+</LinearLayout>

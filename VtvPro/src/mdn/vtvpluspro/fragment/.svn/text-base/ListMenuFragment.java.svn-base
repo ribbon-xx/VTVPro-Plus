@@ -1,0 +1,186 @@
+package mdn.vtvpluspro.fragment;
+
+import mdn.vtvpluspro.R;
+import mdn.vtvpluspro.fragment.account.AllWebviewFragment;
+import mdn.vtvpluspro.fragment.account.LoginFragment;
+import mdn.vtvpluspro.fragment.account.UserInfoFragment;
+import mdn.vtvpluspro.fragment.account.WebviewChargeFragment;
+import mdn.vtvpluspro.network.WebServiceConfig;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+public class ListMenuFragment extends BaseFragment implements OnClickListener {
+	private LinearLayout layLogin;
+	private LinearLayout layProfile;
+	private LinearLayout laySetting;
+	private TextView layBuyPackage;
+	private TextView layChargeMoney;
+	private TextView layRuleCharge;
+	private TextView layHelp;
+
+	private ImageView imvProfile;
+	private TextView tvProfile;
+	private int posClick = -1;
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+
+		View view = inflater.inflate(R.layout.layout_list_menu, null);
+		bindLayout(view);
+		initLayout();
+		baseSlideMenuActivity.mMenuFragment = this;
+		return view;
+	}
+
+	private void bindLayout(View view) {
+		layLogin = (LinearLayout) view.findViewById(R.id.layMenuLogin);
+		layLogin.setOnClickListener(this);
+		layProfile = (LinearLayout) view.findViewById(R.id.layMenuProfile);
+		layProfile.setOnClickListener(this);
+		laySetting = (LinearLayout) view.findViewById(R.id.layMenuSetting);
+		laySetting.setOnClickListener(this);
+		layBuyPackage = (TextView) view.findViewById(R.id.tvMuagoicuoc);
+		layBuyPackage.setOnClickListener(this);
+		layChargeMoney = (TextView) view.findViewById(R.id.tvNapTien);
+		layChargeMoney.setOnClickListener(this);
+		layRuleCharge = (TextView) view.findViewById(R.id.tvChinhsach);
+		layRuleCharge.setOnClickListener(this);
+		layHelp = (TextView) view.findViewById(R.id.tvHotro);
+		layHelp.setOnClickListener(this);
+
+		imvProfile = (ImageView) view.findViewById(R.id.imvProfile);
+		tvProfile = (TextView) view.findViewById(R.id.tvNameLogin);
+	}
+
+	public void initLayout() {
+		if (baseSlideMenuActivity.pProfile.pUserName != null
+				&& baseSlideMenuActivity.pProfile.pUserName.length() > 0) {
+			layLogin.setVisibility(View.GONE);
+			layProfile.setVisibility(View.VISIBLE);
+			tvProfile.setText(baseSlideMenuActivity.pProfile.pUserName);
+		} else {
+			layLogin.setVisibility(View.VISIBLE);
+			layProfile.setVisibility(View.GONE);
+		}
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.layMenuLogin:
+			posClick = -1;
+			actionLoginClick();
+			break;
+		case R.id.layMenuProfile:
+			posClick = -1;
+			actionProfileClick();
+			break;
+		case R.id.layMenuSetting:
+			posClick = -1;
+			break;
+		case R.id.tvMuagoicuoc:
+			posClick = -1;
+			actionChargePackageClick();
+			break;
+		case R.id.tvNapTien:
+			break;
+		case R.id.tvChinhsach:
+			baseSlideMenuActivity.showContent();
+			if ((posClick != 2) || (!(baseSlideMenuActivity.mContent instanceof AllWebviewFragment))) {
+				posClick = 2;
+				actionSupportClick(false);
+			}
+			break;
+		case R.id.tvHotro:
+			baseSlideMenuActivity.showContent();
+			if ((posClick != 3) || (!(baseSlideMenuActivity.mContent instanceof AllWebviewFragment))) {
+				posClick = 3;
+				actionSupportClick(true);
+			}
+			break;
+
+		default:
+			break;
+		}
+	}
+
+	public ImageView getImvProfile() {
+		return imvProfile;
+	}
+
+	public void setImvProfile(ImageView imvProfile) {
+		this.imvProfile = imvProfile;
+	}
+
+	public TextView getTvProfile() {
+		return tvProfile;
+	}
+
+	public void setTvProfile(TextView tvProfile) {
+		this.tvProfile = tvProfile;
+	}
+
+	private void actionLoginClick() {
+		baseSlideMenuActivity.showContent();
+		if (baseSlideMenuActivity.mContent instanceof LoginFragment) {
+			return;
+		}
+		if (baseSlideMenuActivity.isMainFragment()) {
+			baseSlideMenuActivity.switchContent(new LoginFragment(), true);
+		} else {
+			baseSlideMenuActivity.switchContent(new LoginFragment(), false);
+		}
+	}
+
+	private void actionProfileClick() {
+		baseSlideMenuActivity.showContent();
+		if (baseSlideMenuActivity.mContent instanceof UserInfoFragment) {
+			return;
+		}
+		if (baseSlideMenuActivity.isMainFragment()) {
+			baseSlideMenuActivity.switchContent(new UserInfoFragment(), true);
+		} else {
+			baseSlideMenuActivity.switchContent(new UserInfoFragment(), false);
+		}
+	}
+
+	private void actionChargePackageClick() {
+		baseSlideMenuActivity.showContent();
+		if (baseSlideMenuActivity.mContent instanceof WebviewChargeFragment) {
+			return;
+		}
+		nextFragmentChargePackage();
+	}
+
+	private void actionSupportClick(boolean isHotro) {
+		baseSlideMenuActivity.showContent();
+		Bundle bundle = new Bundle();
+		bundle.putString("url_hotro", WebServiceConfig.getUrlSupport(isHotro));
+		AllWebviewFragment fr = new AllWebviewFragment();
+		fr.setArguments(bundle);
+		if (baseSlideMenuActivity.isMainFragment()) {
+			baseSlideMenuActivity.switchContent(fr, true);
+		} else {
+			baseSlideMenuActivity.switchContent(fr, false);
+		}
+	}
+
+	private void nextFragmentChargePackage() {
+		WebviewChargeFragment fr = new WebviewChargeFragment();
+		if (baseSlideMenuActivity.isMainFragment()) {
+			baseSlideMenuActivity.switchContent(fr, true);
+		} else {
+			baseSlideMenuActivity.switchContent(fr, false);
+		}
+	}
+
+}

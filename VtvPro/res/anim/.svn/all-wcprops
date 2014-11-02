@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/res/anim
+END
+fade_in.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/res/anim/fade_in.xml
+END
+fade_rotate_90.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/res/anim/fade_rotate_90.xml
+END
+slide_out_right_left.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/res/anim/slide_out_right_left.xml
+END
+fade_out.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/res/anim/fade_out.xml
+END
+slide_in_from_top.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/res/anim/slide_in_from_top.xml
+END
+slide_in_scale.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/res/anim/slide_in_scale.xml
+END
+slide_out_to_top.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/res/anim/slide_out_to_top.xml
+END
+slide_in_left_right.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/res/anim/slide_in_left_right.xml
+END
+slide_out_to_bottom.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/res/anim/slide_out_to_bottom.xml
+END
+slide_out_left_right.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/res/anim/slide_out_left_right.xml
+END
+slide_in_from_bottom.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/res/anim/slide_in_from_bottom.xml
+END
+slide_in_right_left.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/jupitech_vtvplus/!svn/ver/199/Android/Code/VTVPro/res/anim/slide_in_right_left.xml
+END

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">VTV Plus PRO</string>
+    <string name="fb_id">1390679144514806</string>
+    <string name="ua_id">UA-38068003-2</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="network_fail">Please check your connection and try again!</string>
+    <string name="not_stream">Không lấy được stream của chương trình. Vui lòng thử lại.</string>
+    <string name="favorite_fail">Favorite fail. Please try again!</string>
+    <string name="favorite_empty">No favorite recipes</string>
+    <string name="screen_home">Home Screen</string>
+    <string name="screen_category">Category Screen</string>
+    <string name="screen_details">Player Screen</string>
+    <string name="track_channel">Channel</string>
+    <string name="track_vod">Vod</string>
+    <string name="not_interaciont">Chương trình này không có tương tác. Vui lòng thử lại sau.</string>
+    <string name="not_all_interaction">Không có danh sách tương tác. Vui lòng thử lại sau.</string>
+
+    <!-- Categories -->
+    <string name="categories_hottest">Các chương trình hot nhất</string>
+    <string name="categories_newest">Các chương trình mới nhất</string>
+    <string name="categories_favorites">Các chương trình yêu thích</string>
+    <string name="categories_channel">Kênh</string>
+    <string name="dialog_down_full_version">Chương trình này chỉ xem được ở phiên bản đầy đủ. Bạn có muốn tải phiên bản này ?</string>
+    <string name="dialog_update_version">Hiện đã có phiên bản mới của ứng dụng. Bạn có muốn cập nhật ?</string>
+    <string name="re_login">Tài khoản này đã được sử dụng. Vui lòng đăng nhập lại.</string>
+    <string name="no_login">Bạn cần đăng nhập để sử dụng chức năng này.</string>
+    <string name="liked">Bạn đã like chương trình này.</string>
+    <string name="like_success">Thành công</string>
+    <string name="not_like_sucess">Thất bại. Vui lòng thử lại.</string>
+    <string name="cancel">Cancel</string>
+    <string name="connect_fail">Đã xảy ra lỗi. Vui lòng thử lại.</string>
+
+    <!-- Details -->
+    <string name="details_info_about">Giới thiệu</string>
+    <string name="details_info_schedule">Lịch phát sóng</string>
+    <string name="details_info_related_channel">Kênh liên quan</string>
+    <string name="details_info_related_video">Video liên quan</string>
+    <string name="details_info_interact">Tương tác</string>
+    <string name="details_info_schedule_view">%s lượt xem</string>
+    <string name="details_info_schedule_text">Hẹn giờ xem: %s</string>
+    <string name="details_info_schedule_notification">Đã đến giờ xem chương trình %s.</string>
+    <string name="details_info_schedule_settime">Chọn thời gian bật kênh lớn hơn thời gian hiện tại</string>
+    <string name="details_info_player_stream_error">Server hiện tại đang bị lỗi, vui lòng vào lại sau.</string>
+    <string name="login_error">An error occurred during login. Please try again.</string>
+
+    <!-- Home Screen -->
+    <string name="home_new_channel">Các chương trình mới</string>
+    <string name="home_new_channel_details">Chi tiết</string>
+    <string name="home_dialog_title">Chính sách</string>
+    <string name="home_more_category">More …</string>
+ 	<string name="home_views">Lượt xem: </string>
+ 
+    <!-- Rating -->
+    <string name="rating_title">Đánh giá Vtv Plus Pro</string>
+    <string name="rating_message">Nếu bạn thích sử dụng Vtv Plus Pro, hãy dành một chút thời gian để đánh giá cho ứng dụng của chúng tôi. Cảm ơn bạn đã hỗ trợ giúp ứng dụng tốt hơn!</string>
+    <string name="rating_bt_1">Đánh giá Vtv Plus Pro</string>
+
+    <!-- PullToRefresh -->
+    <string name="pull_to_refresh_pull_label">Pull To Refresh</string>
+    <string name="pull_to_refresh_release_label">Now Let Go!</string>
+    <string name="pull_to_refresh_refreshing_label">Loading&#8230;</string>
+    <string name="pull_to_refresh_from_bottom_pull_label">@string/pull_to_refresh_pull_label</string>
+    <string name="pull_to_refresh_from_bottom_release_label">@string/pull_to_refresh_release_label</string>
+    <string name="pull_to_refresh_from_bottom_refreshing_label">@string/pull_to_refresh_refreshing_label</string>
+    <string name="share_video_to">Share video to…</string>
+
+    <!-- GCM -->
+    <string name="error_config">Please set the %1$s constant and recompile the app.</string>
+    <string name="already_registered">Device is already registered on server.</string>
+    <string name="gcm_registered">From GCM: device successfully registered!</string>
+    <string name="gcm_unregistered">From GCM: device successfully unregistered!</string>
+    <string name="gcm_message">From GCM: you got message!</string>
+    <string name="gcm_error">From GCM: error (%1$s).</string>
+    <string name="gcm_recoverable_error">From GCM: recoverable error (%1$s).</string>
+    <string name="gcm_deleted">From GCM: server deleted %1$d pending messages!</string>
+    <string name="server_registering">Trying (attempt %1$d/%2$d) to register device on Demo Server.</string>
+    <string name="server_registered">From Demo Server: successfully added device!</string>
+    <string name="server_unregistered">From Demo Server: successfully removed device!</string>
+    <string name="server_register_error">Could not register device on Demo Server after %1$d attempts.</string>
+    <string name="server_unregister_error">Could not unregister device on Demo Server (%1$s).</string>
+    <string name="options_register">Register</string>
+    <string name="options_unregister">Unregister</string>
+    <string name="options_clear">Clear</string>
+    <string name="options_exit">Exit</string>
+
+    <!-- Menu -->
+    <string name="taikhoan">Tài khoản</string>
+    <string name="dangnhap">Đăng nhập</string>
+    <string name="caidat">Cài đặt</string>
+    <string name="danhmuc">Danh mục</string>
+    <string name="slidemenu_event">Sự kiện</string>
+    <string name="slidemenu_lichthidau">Lịch thi đấu</string>
+    <string name="slidemenu_livescore">Livescore</string>
+    <string name="slidemenu_xephang">Xếp hạng</string>
+    <string name="slidemenu_video">VIDEO</string>
+    <string name="slidemenu_channel">Kênh</string>
+    
+    <string name="muagoicuoc">Mua gói cước VTV Plus</string>
+    <string name="naptiensmart">Nạp tiền SmartTV/OTT Box</string>
+    <string name="chinhsachtt">Chính sách thanh toán</string>
+    <string name="hotro">Hỗ trợ</string>
+
+    <!-- User -->
+    <string name="not_regis">Bạn chưa đăng ký gói cước hoặc tài khoản của bạn đã hết thời gian sử dụng.</string>
+    <string name="regis_success">Đăng ký thành công.</string>
+    <string name="user_name">Email</string>
+    <string name="password">Mật khẩu</string>
+    <string name="re_password">Xác nhận mật khẩu</string>
+    <string name="xacnhan">Mã xác nhận</string>
+    <string name="nhapmaxacnhan">Nhập mã xác nhận</string>
+    <string name="login">Đăng nhập</string>
+    <string name="regis">Đăng ký</string>
+    <string name="logout">Đăng xuất</string>
+    <string name="goicouc">Gói cước</string>
+    <string name="hansudung">Ngày kết thúc</string>
+    <string name="muagoicuoc1">Mua gói cước</string>
+    <string name="login_play">Bạn cần đăng nhập để xem chương trình.</string>
+    <string name="full_info">Vui lòng điền đầy đủ thông tin.</string>
+    <string name="erorr_email">Email không đúng. Vui lòng nhập lại email.</string>
+    <string name="error_pass">Mật khẩu không trùng nhau.</string>
+    <string name="error_logout">Tài khoản của bạn đã được đăng nhập ở 1 nơi khác</string>
+
+    <!-- Search -->
+    <string name="no_item_search">Không có kết quả. Vui lòng tìm từ khác.</string>
+    <string name="item_search">Kết quả tìm thấy: </string>
+    <string name="no_item_schedule">Hiện chưa có lịch phát sóng. Vui lòng thử lại sau.</string>
+
+    <!-- Charging -->
+    <string name="charging_ok">Đồng ý</string>
+    <string name="charging_cancel">Bỏ qua</string>
+    <string name="charging_send_sms_error">Đăng ký không thành công. Bạn hãy xem lại tài khoản trên sim của mình</string>
+    <string name="charging_descpition">Phí sử dụng dịch vụ 2000đ/ngày, hệ thống tự động gia hạn</string>
+    <string name="charging_sim_not_found">Không thấy sim trong thiết bị này</string>
+    <string name="charging_operator_not_found">Không thấy thông tin đăng ký cho mạng mà bạn đang dùng</string>
+    
+    <!-- event -->
+    <string name="event_schedule">Lịch thi đấu</string>
+    <string name="event_result">Kết quả</string>
+    <string name="event_rankings">Bảng xếp hạng</string>
+    
+    <string-array name="tab_event">
+        <item>Lịch thi đấu</item>
+        <item>Kết quả</item>
+        <item>Bảng xếp hạng</item>
+    </string-array>
+    
+</resources>

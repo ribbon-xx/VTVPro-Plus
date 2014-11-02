@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.handmark.pulltorefreshscrollview.library.PullToRefreshScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:scrollbars="none"
+    ptr:ptrAnimationStyle="flip"
+    ptr:ptrMode="pullDownFromTop" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/layoutGallery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" >
+
+            <mdn.vtvpluspro.library.viewflow.ViewFlow
+                android:id="@+id/galHomeBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </mdn.vtvpluspro.library.viewflow.ViewFlow>
+
+            <mdn.vtvpluspro.library.viewflow.CircleFlowIndicator
+                android:id="@+id/indHomeGallery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/galHomeBanner"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp" />
+        </RelativeLayout>
+		
+         <ListView 
+            android:id="@+id/grChannel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+    		android:divider="@android:color/transparent"
+	    	android:dividerHeight="@dimen/padding_channel"
+            android:background="@android:color/transparent"
+            android:scrollbars="none"
+            android:cacheColorHint="@android:color/transparent">
+             
+         </ListView>
+    </LinearLayout>
+
+</com.handmark.pulltorefreshscrollview.library.PullToRefreshScrollView>

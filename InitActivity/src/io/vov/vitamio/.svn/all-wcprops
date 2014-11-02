@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/jupitech_vtvplus/!svn/ver/185/Android/Code/vitamio_pro/src/io/vov/vitamio
+END
+MediaFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/jupitech_vtvplus/!svn/ver/185/Android/Code/vitamio_pro/src/io/vov/vitamio/MediaFile.java
+END
+Metadata.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/jupitech_vtvplus/!svn/ver/185/Android/Code/vitamio_pro/src/io/vov/vitamio/Metadata.java
+END
+VitamioLicense.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/jupitech_vtvplus/!svn/ver/185/Android/Code/vitamio_pro/src/io/vov/vitamio/VitamioLicense.java
+END
+MediaScanner.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/jupitech_vtvplus/!svn/ver/185/Android/Code/vitamio_pro/src/io/vov/vitamio/MediaScanner.java
+END
+EGL.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/jupitech_vtvplus/!svn/ver/185/Android/Code/vitamio_pro/src/io/vov/vitamio/EGL.java
+END
+LibsChecker.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/jupitech_vtvplus/!svn/ver/185/Android/Code/vitamio_pro/src/io/vov/vitamio/LibsChecker.java
+END
+MediaScannerClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/jupitech_vtvplus/!svn/ver/185/Android/Code/vitamio_pro/src/io/vov/vitamio/MediaScannerClient.java
+END
+MediaPlayer.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/jupitech_vtvplus/!svn/ver/185/Android/Code/vitamio_pro/src/io/vov/vitamio/MediaPlayer.java
+END
+ThumbnailUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/jupitech_vtvplus/!svn/ver/185/Android/Code/vitamio_pro/src/io/vov/vitamio/ThumbnailUtils.java
+END
+MediaMetadataRetriever.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/jupitech_vtvplus/!svn/ver/185/Android/Code/vitamio_pro/src/io/vov/vitamio/MediaMetadataRetriever.java
+END
+Vitamio.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/jupitech_vtvplus/!svn/ver/185/Android/Code/vitamio_pro/src/io/vov/vitamio/Vitamio.java
+END
+VIntent.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/jupitech_vtvplus/!svn/ver/185/Android/Code/vitamio_pro/src/io/vov/vitamio/VIntent.java
+END

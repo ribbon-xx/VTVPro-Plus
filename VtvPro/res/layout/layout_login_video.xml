@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/padding_5dp"
+        android:layout_marginLeft="@dimen/padding_10dp"
+        android:layout_marginRight="@dimen/padding_10dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/login_play"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_size_small" />
+
+    <Button
+        android:id="@+id/btLogin"
+        android:layout_width="@dimen/width_button"
+        android:layout_height="@dimen/player_info_tab_height"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bg_button_account"
+        android:gravity="center"
+        android:text="@string/login"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_small" />
+
+    <Button
+        android:id="@+id/btRegis"
+        android:layout_width="@dimen/width_button"
+        android:layout_height="@dimen/player_info_tab_height"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/padding_10dp"
+        android:layout_marginTop="@dimen/padding_5dp"
+        android:background="@drawable/bg_button_account"
+        android:gravity="center"
+        android:text="@string/regis"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_small" />
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_5dp"
+            android:layout_marginLeft="@dimen/padding_10dp"
+            android:layout_marginRight="@dimen/padding_10dp"
+            android:layout_marginBottom="@dimen/padding_10dp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/charging_descpition"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_small" />
+
+</LinearLayout>
