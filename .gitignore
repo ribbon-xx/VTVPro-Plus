@@ -896,3 +896,11 @@ VtvPro/out/production/VtvPro/mdn/vtvpluspro/util/SmsUtil.class
 VtvPro/out/production/VtvPro/mdn/vtvpluspro/util/StringUtil.class
 VtvPro/out/production/VtvPro/mdn/vtvpluspro/util/UiUtil.class
 VtvPro/out/production/VtvPro/mdn/vtvpluspro/util/Utils.class
+VtvPro/out/production/VtvPro/mdn/vtvpluspro/adapter/RankingsListViewAdapter$ViewHolderItem.class
+VtvPro/out/production/VtvPro/mdn/vtvpluspro/adapter/RankingsListViewAdapter.class
+VtvPro/out/production/VtvPro/mdn/vtvpluspro/fragment/RankingsFragment$1$1.class
+VtvPro/out/production/VtvPro/mdn/vtvpluspro/fragment/RankingsFragment$1.class
+VtvPro/out/production/VtvPro/mdn/vtvpluspro/fragment/RankingsFragment$2.class
+VtvPro/out/production/VtvPro/mdn/vtvpluspro/fragment/RankingsFragment.class
+VtvPro/out/production/VtvPro/mdn/vtvpluspro/object/LeagueInfo.class
+VtvPro/out/production/VtvPro/mdn/vtvpluspro/object/RankingInfo.class
