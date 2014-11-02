@@ -306,6 +306,19 @@ public class WebServiceConfig {
 		return strBuilder.toString();
 	}
 
+	// http://api.vtvsport.com.vn/index.php/fb/menu/
+	public static String getListLeagues() {
+		StringBuilder strBuilder = new StringBuilder(getServer());
+		strBuilder.append("fb/menu/");
+		return strBuilder.toString();
+	}
+
+	public static String getListRankings(String idLeague) {
+		// http://api.vtvsport.com.vn/index.php/fb/ranking/1/
+		StringBuilder strBuilder = new StringBuilder(getServer());
+		strBuilder.append("fb/ranking/").append(idLeague).append("/");
+		return strBuilder.toString();
+	}
 	
 	public static String getUrlAds(String idAds) {
 		StringBuilder strBuilder = new StringBuilder(getServer());

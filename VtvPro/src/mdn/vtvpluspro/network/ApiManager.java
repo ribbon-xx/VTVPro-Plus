@@ -166,6 +166,14 @@ public final class ApiManager {
 		callHttpGet(context, apiCallback, WebServiceConfig.getCategoryVideoMenu(), true);
 	}
 	
+	public static void callListRankings(Context context, IApiCallback apiCallback, String idLeague) {
+		callHttpGet(context, apiCallback, WebServiceConfig.getListRankings(idLeague), true);
+	}
+	
+	public static void callListLeagues(Context context, IApiCallback apiCallback) {
+		callHttpGet(context, apiCallback, WebServiceConfig.getListLeagues(), true);
+	}
+	
 	public static void callDetailAds(Context context, IApiCallback apiCallback, String idAds) {
 		callHttpGet(context, apiCallback, WebServiceConfig.getUrlAds(idAds), true);
 	}
