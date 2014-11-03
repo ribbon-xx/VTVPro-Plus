@@ -139,7 +139,7 @@ public class VtvPlusFragment extends BaseFragment {
 		// TODO Auto-generated method stub
 		super.initUiTabbar();
 
-		baseSlideMenuActivity.iconInteract.setVisibility(View.GONE);
+//		baseSlideMenuActivity.iconInteract.setVisibility(View.GONE);
 		baseSlideMenuActivity.iconSetting.setVisibility(View.GONE);
 		baseSlideMenuActivity.iconBack.setVisibility(View.VISIBLE);
 		baseSlideMenuActivity.iconVtvPlus.setVisibility(View.GONE);

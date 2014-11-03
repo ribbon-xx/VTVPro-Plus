@@ -743,12 +743,13 @@ public final class ParserManager {
 
             if (result.isGetSucc()) {
                 String strReg = getStringValue(entry, "register");
+                result.setSession(getStringValue(entry, "session"));
+                result.setExpiryDate(getStringValue(entry, "expiry_date"));
+                
                 if (strReg.equalsIgnoreCase("1")) {
                     result.setRegister(true);
-                    result.setSession(getStringValue(entry, "session"));
                     // result.setCurrentService(getStringValue(entry,
                     // "current_service"));
-                    result.setExpiryDate(getStringValue(entry, "expiry_date"));
                     // JSONArray arr = getJSONArray(entry, "live_channel");
                     // StringBuilder tmp = new StringBuilder(",");
                     // for (int i = 0; i < arr.length(); i++) {

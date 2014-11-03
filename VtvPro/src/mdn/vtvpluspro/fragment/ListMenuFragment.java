@@ -318,6 +318,26 @@ public class ListMenuFragment extends BaseFragment implements OnClickListener, O
 			baseSlideMenuActivity.getSlidingMenu().toggle();
 		}
 		
+		// ranking
+		if (menu.id == 4) {
+			Fragment ranking = new RankingsFragment();
+			baseSlideMenuActivity.switchContent(ranking, true);
+			baseSlideMenuActivity.getSlidingMenu().toggle();
+		}
+		
+		// schedule
+		if (menu.id == 2) {
+			Fragment schedule = new MatchScheduleFragment();
+			baseSlideMenuActivity.switchContent(schedule, true);
+			baseSlideMenuActivity.getSlidingMenu().toggle();
+		}
+		
+		// event
+		if (menu.id == 1) {
+			Fragment event = new ListCategoryInEventFragment();
+			baseSlideMenuActivity.switchContent(event, true);
+			baseSlideMenuActivity.getSlidingMenu().toggle();
+		}
 	}
 
 }

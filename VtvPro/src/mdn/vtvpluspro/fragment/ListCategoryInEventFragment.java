@@ -40,9 +40,6 @@ public class ListCategoryInEventFragment extends BaseFragment {
 		super.onActivityCreated(savedInstanceState);
 
 		mTabName = getResources().getStringArray(R.array.tab_event);
-//		pager.setAdapter(mAdapter);
-//		indicator.setViewPager(pager);
-		
 		if (mAdapter == null) {
 			mAdapter = new GoogleMusicAdapter(getActivity()
 					.getSupportFragmentManager());
@@ -55,15 +52,6 @@ public class ListCategoryInEventFragment extends BaseFragment {
 //		pager.setOffscreenPageLimit(3);
 		indicator.setViewPager(pager);
 		
-//		 FragmentPagerAdapter adapter = new GoogleMusicAdapter(getSupportFragmentManager());
-//
-//	        ViewPager pager = (ViewPager)findViewById(R.id.pager);
-//	        pager.setAdapter(adapter);
-//
-//	        TabPageIndicator indicator = (TabPageIndicator)findViewById(R.id.indicator);
-//	        indicator.setViewPager(pager);
-	        
-
 		indicator.setOnPageChangeListener(new OnPageChangeListener() {
 
 			@Override
@@ -123,5 +111,16 @@ public class ListCategoryInEventFragment extends BaseFragment {
 		public int getCount() {
 			return mTabName.length;
 		}
+	}
+	
+	@Override
+	protected void initUiTabbar() {
+		// TODO Auto-generated method stub
+		super.initUiTabbar();
+
+		baseSlideMenuActivity.iconSetting.setVisibility(View.GONE);
+		baseSlideMenuActivity.iconBack.setVisibility(View.VISIBLE);
+		baseSlideMenuActivity.iconVtvPlus.setVisibility(View.GONE);
+		baseSlideMenuActivity.closeViewSearch();
 	}
 }

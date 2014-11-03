@@ -219,7 +219,7 @@ public class BaseSlideMenuActivity extends SlidingFragmentActivity implements
 		iconSearch.setOnClickListener(this);
 		iconVtvPlus.setOnClickListener(this);
 		imgAds.setOnClickListener(this);
-		iconInteract.setOnClickListener(this);
+//		iconInteract.setOnClickListener(this);
 
 		bindSecondScreen();
 
@@ -568,9 +568,9 @@ public class BaseSlideMenuActivity extends SlidingFragmentActivity implements
 			case R.id.imvSmallSearch:
 				actionSearch();
 				break;
-			case R.id.iconInteract:
-				((BaseFragment) mContent).actionInteract();
-				break;
+//			case R.id.iconInteract:
+//				((BaseFragment) mContent).actionInteract();
+//				break;
 			default:
 				break;
 		}
@@ -956,7 +956,7 @@ public class BaseSlideMenuActivity extends SlidingFragmentActivity implements
 		isInSecondScreen = false;
 		layoutSecondScreen.setVisibility(View.GONE);
 		if (mContent instanceof PlayerFragment) {
-			iconInteract.setVisibility(View.VISIBLE);
+//			iconInteract.setVisibility(View.VISIBLE);
 			((PlayerFragment) mContent).mVideoView.setShowMediaController(true);
 		}
 		Animation anim = AnimationUtil.SlideOutLeftRight(this);

@@ -1057,7 +1057,7 @@ public class PlayerFragment extends ChargingFragment implements OnInfoListener,
 	 ********************************************************************/
 	private void bindSecondScreen(View view) {
 		if (this.type == 0) {
-			baseSlideMenuActivity.iconInteract.setVisibility(View.VISIBLE);
+			baseSlideMenuActivity.iconInteract.setVisibility(View.GONE);
 		} else {
 			baseSlideMenuActivity.iconInteract.setVisibility(View.GONE);
 		}

@@ -206,7 +206,7 @@ public class HomeFragment extends BaseFragment implements OnTouchListener, OnCli
 	protected void initUiTabbar() {
 		// TODO Auto-generated method stub
 		super.initUiTabbar();
-		baseSlideMenuActivity.iconInteract.setVisibility(View.VISIBLE);
+//		baseSlideMenuActivity.iconInteract.setVisibility(View.VISIBLE);
 	}
 
 	@Override
@@ -1223,12 +1223,11 @@ public class HomeFragment extends BaseFragment implements OnTouchListener, OnCli
 		case R.id.tab_channel:
 			Bundle bundle = new Bundle();
 			bundle.putInt(VtvPlusFragment.KEY_TYPE_ITEM_VTV, 0);
-//			bundle.putString(VtvPlusFragment.KEY_ID_ITEM_VTV, item.getId());
-			bundle.putString(VtvPlusFragment.KEY_NAME_ITEM_VTV,
-					getString(R.string.slidemenu_channel));
+			bundle.putString(VtvPlusFragment.KEY_NAME_ITEM_VTV, getString(R.string.slidemenu_channel));
 			VtvPlusFragment mVtvFragment = new VtvPlusFragment();
 			mVtvFragment.setArguments(bundle);
 			baseSlideMenuActivity.switchContent(mVtvFragment, true);
+			break;
 			
 		case R.id.tab_event:
 			Fragment eventFragment = new ListCategoryInEventFragment();
