@@ -96,7 +96,9 @@ public class ListCategoryInEventFragment extends BaseFragment {
 		public Fragment getItem(int position) {
 			if (position == 0){
 				return new MatchScheduleFragment();
-			} else if (position==2) {
+			} else if (position == 1){
+                return new LiveScoreFragment();
+            } else if (position==2) {
 				return new RankingsFragment();
 			}
 			return TestFragment.newInstance(mTabName[position % mTabName.length]);

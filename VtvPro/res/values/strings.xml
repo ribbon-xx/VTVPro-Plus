@@ -149,5 +149,10 @@
         <item>Kết quả</item>
         <item>Bảng xếp hạng</item>
     </string-array>
-    
+
+    <!-- Live score -->
+    <string name="live_score_title1">TRỰC TIẾP</string>
+    <string name="live_score_title2">KẾT QUẢ</string>
+    <string name="live_score_title3">SẮP ĐÁ</string>
+    <string name="live_score_sub_title">Kết quả trực tuyến</string>
 </resources>

@@ -9,6 +9,7 @@
 package mdn.vtvpluspro.common;
 
 import android.content.Context;
+import android.text.format.DateFormat;
 import mdn.vtvplus.R;
 import mdn.vtvpluspro.fragment.HomeFragment;
 import mdn.vtvpluspro.object.*;
@@ -25,11 +26,9 @@ import org.json.JSONObject;
 
 import com.google.analytics.tracking.android.Log;
 
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.TimeZone;
+import java.util.*;
 
 /**
  * ParserUtility supports to parser http response
@@ -745,7 +744,7 @@ public final class ParserManager {
                 String strReg = getStringValue(entry, "register");
                 result.setSession(getStringValue(entry, "session"));
                 result.setExpiryDate(getStringValue(entry, "expiry_date"));
-                
+
                 if (strReg.equalsIgnoreCase("1")) {
                     result.setRegister(true);
                     // result.setCurrentService(getStringValue(entry,
@@ -1080,9 +1079,12 @@ public final class ParserManager {
                 matchScheduleMenuObject.setName(getStringValue(entry, "name"));
                 matchScheduleMenuObject.setCode_name(getStringValue(entry, "code_name"));
 
-                matchScheduleMenuObject.setImage_url_large(getStringValue(entry, "image_url_large"));
-                matchScheduleMenuObject.setImage_url_medium(getStringValue(entry, "image_url_medium"));
-                matchScheduleMenuObject.setImage_url_small(getStringValue(entry, "image_url_small"));
+                matchScheduleMenuObject
+                        .setImage_url_large(getStringValue(entry, "image_url_large"));
+                matchScheduleMenuObject.setImage_url_medium(getStringValue(entry,
+                        "image_url_medium"));
+                matchScheduleMenuObject
+                        .setImage_url_small(getStringValue(entry, "image_url_small"));
 
                 menuObjects.add(matchScheduleMenuObject);
             }
@@ -1092,7 +1094,74 @@ public final class ParserManager {
         }
     }
 
-    public static void parserListMatchScheduleData(String json, List<MatchScheduleModel> mListOfOngoing, List<MatchScheduleModel> mListOfResult) {
+    /**
+     * Position of json tag
+     * 6 - Time of on going match
+     * 7 - Result or vs
+     * 8 - Match status
+     * 9 - Team 1 name
+     * 13 - Team 2 name
+     */
+    public static void parserListLiveScoreData(String json,
+            List<MatchScheduleModel> mListOfCurrent, List<MatchScheduleModel> mListOfResult,
+            List<MatchScheduleModel> mListOfFuture) {
+        try {
+            JSONObject jsonTotal = new JSONObject(json);
+            JSONObject jsonData = jsonTotal.getJSONObject("data");
+            Iterator<String> iter = jsonData.keys();
+            while (iter.hasNext()) {
+                String key = iter.next();
+                JSONArray jsonArrayLevel1 = (JSONArray) jsonData.get(key);
+                for(int i = 0; i < jsonArrayLevel1.length(); i++){
+                    JSONArray jsonArrayLevel2 = jsonArrayLevel1.getJSONArray(i);
+                    MatchScheduleModel msModel = new MatchScheduleModel();
+
+                    String time = jsonArrayLevel2.getString(6);
+                    Calendar cal = Calendar.getInstance();
+                    String timeStamp = cal.get(Calendar.YEAR) + "-" + (cal.get(Calendar.MONTH) + 1)+ "-" + cal.get(Calendar.DAY_OF_MONTH) + " " + time;
+
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+                    Date date = sdf.parse(timeStamp);
+
+                    long vnTimeStamp = date.getTime() + 21600;
+
+                    cal.setTimeInMillis(vnTimeStamp);
+                    String vnDate = DateFormat.format("HH:mm dd-MM", cal).toString();
+
+                    android.util.Log.d("Ribbon", "vnDate: " + vnDate);
+                    msModel.setAdditional_info(vnDate);
+
+
+                    msModel.setScores_and_stats(jsonArrayLevel2.getString(7));
+                    msModel.setStatus(jsonArrayLevel2.getString(8)); // important
+
+                    TeamObject homeTeam = new TeamObject();
+                    homeTeam.setName(jsonArrayLevel2.getString(9));
+                    msModel.setHomeTeam(homeTeam);
+
+                    TeamObject awayTeam = new TeamObject();
+                    awayTeam.setName(jsonArrayLevel2.getString(13));
+                    msModel.setAwayTeam(awayTeam);
+
+                    if(msModel.getStatus().equalsIgnoreCase("vs")){
+                        // Ongoing
+                        mListOfFuture.add(msModel);
+                    } else if(msModel.getStatus().equalsIgnoreCase("FT") || msModel.getStatus().equalsIgnoreCase("'AET'") || msModel.getStatus().equalsIgnoreCase("'Susp'") || msModel.getStatus().equalsIgnoreCase("'Post'")){
+                        // Result
+                        mListOfResult.add(msModel);
+                    } else {
+                        // Current
+                        mListOfCurrent.add(msModel);
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void parserListMatchScheduleData(String json,
+            List<MatchScheduleModel> mListOfOngoing, List<MatchScheduleModel> mListOfResult) {
         try {
             JSONObject jsonTotal = new JSONObject(json);
             JSONObject jsonObject = jsonTotal.getJSONObject("data");
@@ -1117,7 +1186,7 @@ public final class ParserManager {
         }
     }
 
-    private static MatchScheduleModel parseJSONToObject(JSONObject entry) throws Exception{
+    private static MatchScheduleModel parseJSONToObject(JSONObject entry) throws Exception {
         MatchScheduleModel matchScheduleModel = new MatchScheduleModel();
         matchScheduleModel.setID(getLongValue(entry, "id"));
         matchScheduleModel.setGUID(getLongValue(entry, "guid"));
@@ -1172,7 +1241,7 @@ public final class ParserManager {
         return matchScheduleModel;
     }
 
-    private static String getScoreAndStat(JSONObject entry){
+    private static String getScoreAndStat(JSONObject entry) {
         try {
             String returnValue;
             JSONObject jsonObject = entry.getJSONObject("scores_and_stats");
@@ -1182,7 +1251,7 @@ public final class ParserManager {
 
             returnValue = homeTeamStat + " - " + awayTeamStat;
             return returnValue;
-        } catch (Exception ex){
+        } catch (Exception ex) {
             return "";
         }
     }

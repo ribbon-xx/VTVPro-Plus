@@ -318,4 +318,8 @@ public final class ApiManager {
     public static void callListMatchScheduleMenuItem(Context context, IApiCallback apiCallback) {
         callHttpGet(context, apiCallback, WebServiceConfig.getListMatchScheduleMenuItem(), false);
     }
+
+    public static void callListLiveScore(Context context, IApiCallback apiCallback) {
+        callHttpGet(context, apiCallback, WebServiceConfig.getListLiveScore(), false);
+    }
 }

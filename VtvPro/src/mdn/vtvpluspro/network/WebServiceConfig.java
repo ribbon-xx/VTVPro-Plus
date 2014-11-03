@@ -370,4 +370,10 @@ public class WebServiceConfig {
         strBuilder.append("fb/menu/");
         return strBuilder.toString();
     }
+
+    public static String getListLiveScore() {
+        StringBuilder strBuilder = new StringBuilder(getServer());
+        strBuilder.append("fb/livescore/");
+        return strBuilder.toString();
+    }
 }

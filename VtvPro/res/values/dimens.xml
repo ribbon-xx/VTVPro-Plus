@@ -76,5 +76,7 @@
     <dimen name="width_button">150dp</dimen>
     <dimen name="height_captcha">80dp</dimen>
 
+    <!-- Live Score -->
+    <dimen name="image_title_size">40dp</dimen>
     
 </resources>

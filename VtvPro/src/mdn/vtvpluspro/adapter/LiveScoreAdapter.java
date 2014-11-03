@@ -1,4 +1,3 @@
-
 package mdn.vtvpluspro.adapter;
 
 import android.content.Context;
@@ -10,19 +9,17 @@ import android.widget.TextView;
 import mdn.vtvplus.R;
 import mdn.vtvpluspro.object.MatchScheduleModel;
 
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 /**
- * Created by RibboN on 11/2/14.
+ * Created by RibboN on 11/4/14.
  */
-public class MatchScheduleAdapter extends BaseAdapter {
+public class LiveScoreAdapter extends BaseAdapter {
 
     private Context mContext;
     private List<MatchScheduleModel> mMatchScheduleModels;
 
-    public MatchScheduleAdapter(Context context, List<MatchScheduleModel> matchScheduleModels) {
+    public LiveScoreAdapter(Context context, List<MatchScheduleModel> matchScheduleModels) {
         mContext = context;
         mMatchScheduleModels = matchScheduleModels;
     }
@@ -71,23 +68,21 @@ public class MatchScheduleAdapter extends BaseAdapter {
 
         MatchScheduleModel matchScheduleModel = mMatchScheduleModels.get(i);
 
-        Date dateTimeOfPlay = matchScheduleModel.getDatetime_of_play();
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(dateTimeOfPlay);
-        int month = calendar.get(Calendar.MONTH) + 1;
-        String hour = String.valueOf(calendar.get(Calendar.HOUR_OF_DAY)).length() == 1 ? "0" + calendar.get(Calendar.HOUR_OF_DAY) : String.valueOf(calendar.get(Calendar.HOUR_OF_DAY));
-        String minute = String.valueOf(calendar.get(Calendar.MINUTE)).length() == 1 ? "0" + calendar.get(Calendar.MINUTE) : String.valueOf(calendar.get(Calendar.MINUTE));
-        String day = String.valueOf(calendar.get(Calendar.DAY_OF_MONTH)).length() == 1 ? "0" + calendar.get(Calendar.DAY_OF_MONTH) : String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
-
-        String timeOfPlay = hour + ":" + minute + " " + day + "/" + month;
-
-        holder.tvTime.setText(timeOfPlay);
-        holder.tvLeftTeam.setText(matchScheduleModel.getHomeTeam().getName());
-        if(!matchScheduleModel.getScores_and_stats().equals("")){
+        if(matchScheduleModel.getStatus().equalsIgnoreCase("vs")){
+            // Ongoing
+            holder.tvTime.setText(matchScheduleModel.getAdditional_info());
+            holder.tvResult.setText(mContext.getResources().getString(R.string.versus));
+        } else if(matchScheduleModel.getStatus().equalsIgnoreCase("FT") || matchScheduleModel.getStatus().equalsIgnoreCase("'AET'") || matchScheduleModel.getStatus().equalsIgnoreCase("'Susp'") || matchScheduleModel.getStatus().equalsIgnoreCase("'Post'")){
+            // Result
+            holder.tvTime.setText(matchScheduleModel.getStatus());
             holder.tvResult.setText(matchScheduleModel.getScores_and_stats());
         } else {
-            holder.tvResult.setText(mContext.getResources().getString(R.string.versus));
+            // Current
+            holder.tvTime.setText(matchScheduleModel.getStatus());
+            holder.tvResult.setText(matchScheduleModel.getScores_and_stats());
         }
+
+        holder.tvLeftTeam.setText(matchScheduleModel.getHomeTeam().getName());
         holder.tvRightTeam.setText(matchScheduleModel.getAwayTeam().getName());
 
         return view;

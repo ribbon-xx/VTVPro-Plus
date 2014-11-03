@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/fragment_list_live_score_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding_10dp"
+                android:layout_marginTop="@dimen/padding_10dp"
+                android:background="@drawable/background_rounded_corner"
+                android:orientation="vertical">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="@dimen/padding_10dp"
+                    android:paddingRight="@dimen/padding_10dp"
+                    android:paddingTop="2dp"
+                    android:orientation="horizontal">
+
+                <ImageView
+                        android:layout_width="@dimen/image_title_size"
+                        android:layout_height="@dimen/image_title_size"
+                        android:gravity="center_vertical"
+                        android:scaleType="fitXY"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/icon_live_score"/>
+
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/padding_10dp"
+                            android:text="@string/live_score_title1"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_10dp"
+                    android:paddingBottom="@dimen/padding_10dp"
+                    android:paddingLeft="@dimen/padding_10dp"
+                    android:paddingRight="@dimen/padding_10dp"
+                    android:background="@color/list_header_background"
+                    android:text="@string/live_score_sub_title"/>
+
+            <mdn.vtvpluspro.common.ExpandableHeightListView
+                    android:id="@+id/fragment_live_score_current_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fadingEdge="none"
+                    android:focusable="false"
+                    android:scrollbars="none"
+                    android:paddingLeft="@dimen/padding_10dp"
+                    android:paddingRight="@dimen/padding_10dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding_10dp"
+                android:layout_marginTop="@dimen/padding_10dp"
+                android:background="@drawable/background_rounded_corner"
+                android:orientation="vertical">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="@dimen/padding_10dp"
+                    android:paddingRight="@dimen/padding_10dp"
+                    android:paddingTop="2dp"
+                    android:orientation="horizontal">
+
+                <ImageView
+                        android:layout_width="@dimen/image_title_size"
+                        android:layout_height="@dimen/image_title_size"
+                        android:gravity="center_vertical"
+                        android:scaleType="fitXY"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/icon_live_score"/>
+
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/padding_10dp"
+                            android:text="@string/live_score_title2"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_10dp"
+                    android:paddingBottom="@dimen/padding_10dp"
+                    android:paddingLeft="@dimen/padding_10dp"
+                    android:paddingRight="@dimen/padding_10dp"
+                    android:background="@color/list_header_background"
+                    android:text="@string/live_score_sub_title"/>
+
+            <mdn.vtvpluspro.common.ExpandableHeightListView
+                    android:id="@+id/fragment_live_score_result_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fadingEdge="none"
+                    android:focusable="false"
+                    android:scrollbars="none"
+                    android:paddingLeft="@dimen/padding_10dp"
+                    android:paddingRight="@dimen/padding_10dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding_10dp"
+                android:layout_marginTop="@dimen/padding_10dp"
+                android:layout_marginBottom="@dimen/padding_20dp"
+                android:background="@drawable/background_rounded_corner"
+                android:orientation="vertical">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="@dimen/padding_10dp"
+                    android:paddingRight="@dimen/padding_10dp"
+                    android:paddingTop="2dp"
+                    android:orientation="horizontal">
+
+                <ImageView
+                        android:layout_width="@dimen/image_title_size"
+                        android:layout_height="@dimen/image_title_size"
+                        android:gravity="center_vertical"
+                        android:scaleType="fitXY"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/icon_live_score"/>
+
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/padding_10dp"
+                            android:text="@string/live_score_title3"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_10dp"
+                    android:paddingBottom="@dimen/padding_10dp"
+                    android:paddingLeft="@dimen/padding_10dp"
+                    android:paddingRight="@dimen/padding_10dp"
+                    android:background="@color/list_header_background"
+                    android:text="@string/live_score_sub_title"/>
+
+            <mdn.vtvpluspro.common.ExpandableHeightListView
+                    android:id="@+id/fragment_live_score_future_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fadingEdge="none"
+                    android:focusable="false"
+                    android:scrollbars="none"
+                    android:paddingLeft="@dimen/padding_10dp"
+                    android:paddingRight="@dimen/padding_10dp"/>
+
+        </LinearLayout>
+
+        <include layout="@layout/layout_event_footer"/>
+
+    </LinearLayout>
+
+</ScrollView>
