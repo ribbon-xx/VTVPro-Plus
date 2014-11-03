@@ -127,7 +127,7 @@ public class MatchScheduleFragment extends BaseFragment {
 
     private void updateView() {
         lvOfOngoingAdapter = new MatchScheduleAdapter(getActivity(), mListOfOngoing);
-        lvOfResultAdapter = new MatchScheduleAdapter(getActivity(), mListOfOngoing);
+        lvOfResultAdapter = new MatchScheduleAdapter(getActivity(), mListOfResult);
 
         fragment_list_match_schedule_league_ongoing_list.setAdapter(lvOfOngoingAdapter);
         fragment_list_match_schedule_league_past_list.setAdapter(lvOfResultAdapter);

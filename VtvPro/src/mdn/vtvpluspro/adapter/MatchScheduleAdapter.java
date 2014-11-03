@@ -79,7 +79,7 @@ public class MatchScheduleAdapter extends BaseAdapter {
 
         holder.tvTime.setText(timeOfPlay);
         holder.tvLeftTeam.setText(matchScheduleModel.getHomeTeam().getName());
-        if(!matchScheduleModel.getStatus().equals("SCHEDULED")){
+        if(!matchScheduleModel.getScores_and_stats().equals("")){
             holder.tvResult.setText(matchScheduleModel.getScores_and_stats());
         } else {
             holder.tvResult.setText(mContext.getResources().getString(R.string.versus));
