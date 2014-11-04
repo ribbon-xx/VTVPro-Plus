@@ -134,5 +134,7 @@ public class LiveScoreFragment extends BaseFragment {
         fragment_live_score_current_list.setAdapter(lvOfCurrentAdapter);
         fragment_live_score_result_list.setAdapter(lvOfResultAdapter);
         fragment_live_score_future_list.setAdapter(lvOfFutureAdapter);
+
+        fragment_list_live_score_root.smoothScrollTo(0, 0);
     }
 }

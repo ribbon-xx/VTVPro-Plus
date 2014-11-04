@@ -9,6 +9,7 @@
 package mdn.vtvpluspro.network;
 
 import android.content.Context;
+import android.util.Log;
 import mdn.vtvpluspro.Config;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -284,6 +285,7 @@ public final class ApiManager {
 						}
 					}
 				});
+        Log.e("Ribbon", "Request url: " + url);
 		asyncHttpGet.execute(url);
 	}
 

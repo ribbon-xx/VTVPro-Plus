@@ -911,3 +911,8 @@ VtvPro/VtvPro.iml
 VtvPro/gen/mdn/vtvplus/BuildConfig.java
 facebook/gen/com/facebook/android/BuildConfig.java
 library/gen/com/viewpagerindicator/BuildConfig.java
+VtvPro/out/production/VtvPro/mdn/vtvpluspro/adapter/LiveScoreAdapter$MatchScheduleItemHolder.class
+VtvPro/out/production/VtvPro/mdn/vtvpluspro/adapter/LiveScoreAdapter.class
+VtvPro/out/production/VtvPro/mdn/vtvpluspro/fragment/LiveScoreFragment$1.class
+VtvPro/out/production/VtvPro/mdn/vtvpluspro/fragment/LiveScoreFragment$2.class
+VtvPro/out/production/VtvPro/mdn/vtvpluspro/fragment/LiveScoreFragment.class
