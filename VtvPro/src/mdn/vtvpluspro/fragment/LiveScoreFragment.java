@@ -3,6 +3,7 @@ package mdn.vtvpluspro.fragment;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +41,9 @@ public class LiveScoreFragment extends BaseFragment {
     private List<MatchScheduleModel> mListOfResult;
     private List<MatchScheduleModel> mListOfFuture;
 
+    private Handler handler;
+    private boolean isTheFirstTime;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +52,8 @@ public class LiveScoreFragment extends BaseFragment {
         mListOfCurrent = new ArrayList<MatchScheduleModel>();
         mListOfResult = new ArrayList<MatchScheduleModel>();
         mListOfFuture = new ArrayList<MatchScheduleModel>();
+        handler = new Handler();
+        isTheFirstTime = true;
     }
 
     @Override
@@ -73,7 +79,9 @@ public class LiveScoreFragment extends BaseFragment {
     }
 
     private void requestData() {
-        DialogManager.showSimpleProgressDialog(baseSlideMenuActivity);
+        if(isTheFirstTime) {
+            DialogManager.showSimpleProgressDialog(baseSlideMenuActivity);
+        }
 
         ApiManager.callListLiveScore(baseSlideMenuActivity, new IApiCallback() {
 
@@ -121,7 +129,18 @@ public class LiveScoreFragment extends BaseFragment {
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
                 updateView();
-                DialogManager.closeProgressDialog();
+                if(null != handler){
+                    if(isTheFirstTime) {
+                        DialogManager.closeProgressDialog();
+                        isTheFirstTime = false;
+                    }
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            requestData();
+                        }
+                    }, 30000);
+                }
             }
         }.execute(response);
     }
