@@ -1123,14 +1123,18 @@ public final class ParserManager {
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
                     Date date = sdf.parse(timeStamp);
 
-                    long vnTimeStamp = date.getTime() + 21600;
+                    long vnTimeStamp = date.getTime() + 21600 * 1000;
 
                     cal.setTimeInMillis(vnTimeStamp);
-                    String vnDate = DateFormat.format("HH:mm dd-MM", cal).toString();
 
+                    int month = cal.get(Calendar.MONTH) + 1;
+                    String hour = String.valueOf(cal.get(Calendar.HOUR_OF_DAY)).length() == 1 ? "0" + cal.get(Calendar.HOUR_OF_DAY) : String.valueOf(cal.get(Calendar.HOUR_OF_DAY));
+                    String minute = String.valueOf(cal.get(Calendar.MINUTE)).length() == 1 ? "0" + cal.get(Calendar.MINUTE) : String.valueOf(cal.get(Calendar.MINUTE));
+                    String day = String.valueOf(cal.get(Calendar.DAY_OF_MONTH)).length() == 1 ? "0" + cal.get(Calendar.DAY_OF_MONTH) : String.valueOf(cal.get(Calendar.DAY_OF_MONTH));
+                    String monthValue = String.valueOf(month).length() == 1 ? "0" + month : String.valueOf(month);
+                    String vnDate = hour + ":" + minute + " " + day + "-" + monthValue;
                     android.util.Log.d("Ribbon", "vnDate: " + vnDate);
                     msModel.setAdditional_info(vnDate);
-
 
                     msModel.setScores_and_stats(jsonArrayLevel2.getString(7));
                     msModel.setStatus(jsonArrayLevel2.getString(8)); // important

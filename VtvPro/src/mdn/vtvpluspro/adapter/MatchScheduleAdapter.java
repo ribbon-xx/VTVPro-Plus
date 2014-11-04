@@ -78,8 +78,9 @@ public class MatchScheduleAdapter extends BaseAdapter {
         String hour = String.valueOf(calendar.get(Calendar.HOUR_OF_DAY)).length() == 1 ? "0" + calendar.get(Calendar.HOUR_OF_DAY) : String.valueOf(calendar.get(Calendar.HOUR_OF_DAY));
         String minute = String.valueOf(calendar.get(Calendar.MINUTE)).length() == 1 ? "0" + calendar.get(Calendar.MINUTE) : String.valueOf(calendar.get(Calendar.MINUTE));
         String day = String.valueOf(calendar.get(Calendar.DAY_OF_MONTH)).length() == 1 ? "0" + calendar.get(Calendar.DAY_OF_MONTH) : String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
+        String monthValue = String.valueOf(month).length() == 1 ? "0" + month : String.valueOf(month);
 
-        String timeOfPlay = hour + ":" + minute + " " + day + "/" + month;
+        String timeOfPlay = hour + ":" + minute + " " + day + "/" + monthValue;
 
         holder.tvTime.setText(timeOfPlay);
         holder.tvLeftTeam.setText(matchScheduleModel.getHomeTeam().getName());
