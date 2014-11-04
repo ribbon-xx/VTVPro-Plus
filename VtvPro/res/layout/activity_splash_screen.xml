@@ -7,9 +7,10 @@
     android:orientation="vertical" >
 
     <ImageView
-        android:layout_width="@dimen/splash_icon_width"
-        android:layout_height="@dimen/splash_icon_height"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@drawable/splash_image"
-        android:contentDescription="@string/app_name" />
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY" />
 
 </LinearLayout>

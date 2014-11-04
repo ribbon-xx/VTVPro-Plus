@@ -45,7 +45,7 @@
         android:layout_height="@dimen/base_title_icon_height"
         android:contentDescription="@string/app_name"
         android:scaleType="fitXY"
-        android:src="@drawable/icon_vtvplus"
+        android:src="@drawable/icon_vtv_plus"
         android:visibility="gone" />
 
     <View

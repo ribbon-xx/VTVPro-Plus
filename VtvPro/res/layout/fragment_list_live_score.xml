@@ -200,7 +200,7 @@
 
         </LinearLayout>
 
-        <include layout="@layout/layout_event_footer"/>
+<!--         <include layout="@layout/layout_event_footer"/> -->
 
     </LinearLayout>
 
