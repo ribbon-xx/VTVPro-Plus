@@ -446,7 +446,9 @@ public class PlayerFragment extends ChargingFragment implements OnInfoListener,
 		super.onDestroy();
 
 		try {
-			mThreadAudioBrightness.interrupt();
+			if (mThreadAudioBrightness!= null) {
+				mThreadAudioBrightness.interrupt();	
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -919,7 +921,7 @@ public class PlayerFragment extends ChargingFragment implements OnInfoListener,
 				if (!(baseSlideMenuActivity.pProfile.pIdChannel
 						.contains(strBuilder.toString()))) {
 					viewNotCharge.setVisibility(View.GONE);
-					btChargePackage.setVisibility(View.VISIBLE);
+					btChargePackage.setVisibility(View.GONE);
 				} else {
 					viewNotCharge.setVisibility(View.VISIBLE);
 					btChargePackage.setVisibility(View.GONE);
@@ -939,7 +941,7 @@ public class PlayerFragment extends ChargingFragment implements OnInfoListener,
 				if (!(baseSlideMenuActivity.pProfile.pIdChannel
 						.contains(strBuilder.toString()))) {
 					viewNotCharge.setVisibility(View.GONE);
-					btChargePackage.setVisibility(View.VISIBLE);
+					btChargePackage.setVisibility(View.GONE);
 				} else {
 					viewNotCharge.setVisibility(View.VISIBLE);
 					btChargePackage.setVisibility(View.GONE);

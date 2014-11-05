@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import mdn.vtvplus.R;
 import mdn.vtvpluspro.adapter.RankingsListViewAdapter;
+import mdn.vtvpluspro.common.DialogManager;
 import mdn.vtvpluspro.network.ApiManager;
 import mdn.vtvpluspro.network.IApiCallback;
 import mdn.vtvpluspro.object.LeagueInfo;
@@ -107,8 +108,10 @@ public class RankingsFragment extends BaseFragment {
 
 			@Override
 			public void responseFailWithCode(int statusCode) {
-				// TODO Auto-generated method stub
-				
+				DialogManager.alert(baseSlideMenuActivity,
+                        getString(R.string.network_fail));
+
+                DialogManager.closeProgressDialog();
 			}
 			
 		});
@@ -160,8 +163,10 @@ public class RankingsFragment extends BaseFragment {
 			
 			@Override
 			public void responseFailWithCode(int statusCode) {
-				// TODO Auto-generated method stub
+				DialogManager.alert(baseSlideMenuActivity,
+                        getString(R.string.network_fail));
 
+                DialogManager.closeProgressDialog();
 			}
 		}, idLeague);
 

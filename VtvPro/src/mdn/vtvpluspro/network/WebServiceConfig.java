@@ -335,7 +335,8 @@ public class WebServiceConfig {
 	public static String getUrlCheckChargingEnable() {
 		return "http://wrappersrv.soci.vn/gom_api_v3/api/get_production_setting.php";
 	}
-
+	
+	// popup payment
 	public static String getUrlGetPaymentPopupSetting(String distributorChannelId, String telcoGlobalCode) {
 		return new StringBuilder().append("http://wrappersrv.soci.vn/vtv_plus/api/vtvplus_payment.php")
 				.append("?distributor_channel_id=")
@@ -350,7 +351,6 @@ public class WebServiceConfig {
 				.append("/username/").append(userName).append("/session/").append(session).toString();
 	}
 
-	
 	public static String gcmPostRegistrationId = getServer()
 			+ "push/device_push/";
 
@@ -374,6 +374,12 @@ public class WebServiceConfig {
     public static String getListLiveScore() {
         StringBuilder strBuilder = new StringBuilder(getServer());
         strBuilder.append("fb/livescore/");
+        return strBuilder.toString();
+    }
+    
+    public static String getSMSSetting() {
+        StringBuilder strBuilder = new StringBuilder(getServer());
+        strBuilder.append("getsms/1/android/");
         return strBuilder.toString();
     }
 }

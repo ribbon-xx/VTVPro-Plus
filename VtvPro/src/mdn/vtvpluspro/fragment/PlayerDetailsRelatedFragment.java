@@ -146,8 +146,8 @@ public class PlayerDetailsRelatedFragment extends BaseFragmentPlayerDetail
 				mPlayerFragment.itemInfo = tmpItemInfo;
 
 				// Update view channel
-				ApiManager.callUpdateViewChannel(baseSlideMenuActivity,
-						mPlayerFragment.itemInfo.getId());
+//				ApiManager.callUpdateViewChannel(baseSlideMenuActivity,
+//						mPlayerFragment.itemInfo.getId());
 
 				// Google analytics track channel
 				baseSlideMenuActivity

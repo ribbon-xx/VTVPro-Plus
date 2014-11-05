@@ -3,22 +3,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingTop="15dp"
     android:paddingLeft="5dp"
-    android:paddingRight="5dp" >
+    android:paddingRight="5dp"
+    android:paddingTop="15dp" >
 
-    <Spinner
-        android:id="@+id/sp_adapter"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingRight="10dp"
+            android:text="@string/event_select_title" />
+
+        <Spinner
+            android:id="@+id/sp_adapter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#494962"
-        android:text="BẢNG XẾP HẠNG" 
-        android:padding="10dp"/>
+        android:padding="10dp"
+        android:text="BẢNG XẾP HẠNG" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,7 +59,7 @@
             android:layout_weight="1"
             android:text="Điểm" />
     </LinearLayout>
-    
+
     <ListView
         android:id="@+id/lv_rankings"
         android:layout_width="match_parent"

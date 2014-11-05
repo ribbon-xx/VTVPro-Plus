@@ -465,8 +465,8 @@ public class VtvPlusFragment extends BaseFragment {
 		playerFragment.setArguments(bundle);
 		baseSlideMenuActivity.switchContent(playerFragment, false);
 
-		ApiManager.callUpdateViewChannel(baseSlideMenuActivity,
-				channelInfo.getId());
+//		ApiManager.callUpdateViewChannel(baseSlideMenuActivity,
+//				channelInfo.getId());
 
 		baseSlideMenuActivity.trackEvent(
 				baseSlideMenuActivity.getString(R.string.track_channel),

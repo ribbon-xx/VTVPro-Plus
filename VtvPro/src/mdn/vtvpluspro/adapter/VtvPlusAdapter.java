@@ -2,7 +2,6 @@ package mdn.vtvpluspro.adapter;
 
 import java.util.ArrayList;
 
-import mdn.vtvpluspro.BaseSlideMenuActivity;
 import mdn.vtvplus.R;
 import mdn.vtvpluspro.common.ImageUtility;
 import mdn.vtvpluspro.object.AdsInfo;
@@ -20,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class VtvPlusAdapter extends BaseAdapter {
@@ -93,6 +93,7 @@ public class VtvPlusAdapter extends BaseAdapter {
 
 			helper.tvName = (TextView) view.findViewById(R.id.homeItemTvName);
 			helper.tvView = (TextView) view.findViewById(R.id.homeItemTvView);
+			
 //			helper.tvLike = (TextView) view.findViewById(R.id.homeItemTvLike);
 //			helper.imgLock = (ImageView) view.findViewById(R.id.homeItemLock);
 //			helper.imgLock.getLayoutParams().width = widthSmall;
@@ -124,12 +125,16 @@ public class VtvPlusAdapter extends BaseAdapter {
 		helper.imgIconSmall.setImageBitmap(null);
 		switch (info.getTypeItem()) {
 		case 0:
-			helper.layBottom.setVisibility(View.VISIBLE);
+			helper.layBottom.setVisibility(View.GONE);
 			helper.imgIconSmall.setVisibility(View.VISIBLE);
 			ImageUtility.loadBitmapFromUrl(mContext,
-					((ChannelInfo) info).getIcon(), helper.imgIcon);
-			ImageUtility.loadBitmapFromUrl(mContext,
-					((ChannelInfo) info).getIconSmall(), helper.imgIconSmall);
+					((ChannelInfo) info).getIconSmall(), helper.imgIcon);
+			
+			
+//			helper.imgIcon.setVisibility(View.GONE);
+			
+//			ImageUtility.loadBitmapFromUrl(mContext,
+//					((ChannelInfo) info).getIconSmall(), helper.imgIconSmall);
 //			if (((ChannelInfo)info).isFree()) {
 //				helper.imgLock.setVisibility(View.GONE);
 //			} else {

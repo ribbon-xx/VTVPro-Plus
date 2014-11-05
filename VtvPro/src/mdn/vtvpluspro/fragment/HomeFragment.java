@@ -821,8 +821,8 @@ public class HomeFragment extends BaseFragment implements OnTouchListener, OnCli
 		playerFragment.setArguments(bundle);
 		baseSlideMenuActivity.switchContent(playerFragment, true);
 
-		ApiManager.callUpdateViewChannel(baseSlideMenuActivity,
-				channelInfo.getId());
+//		ApiManager.callUpdateViewChannel(baseSlideMenuActivity,
+//				channelInfo.getId());
 
 		// Google analytics track channel
 		baseSlideMenuActivity.trackEvent(

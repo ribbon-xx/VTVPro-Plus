@@ -15,7 +15,8 @@
         android:gravity="center"
         android:text="@string/muagoicuoc1"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/text_size_small" />
+        android:textSize="@dimen/text_size_small"
+        android:visibility="gone" />
 
     <LinearLayout
         android:id="@+id/viewNotCharge"

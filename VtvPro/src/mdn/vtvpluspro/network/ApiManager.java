@@ -196,6 +196,10 @@ public final class ApiManager {
 		callHttpPost(context, callback, params, WebServiceConfig.getUrlCheckChargingEnable(), true);
 	}
 
+	public static void callCheckSMSSetting(Context context, IApiCallback apiCallback) {
+		callHttpGet(context, apiCallback, WebServiceConfig.getSMSSetting(), true);
+	}
+	
 	public static void callGetChargeSetting(Context context, IApiCallback callback, String distributorChannelId, String operatorCode) {
 		String url = WebServiceConfig.getUrlGetPaymentPopupSetting(distributorChannelId, operatorCode);
 		callHttpGet(context, callback, url, true);
