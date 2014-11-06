@@ -42,6 +42,7 @@ public class CategoryVideoFragment extends BaseFragment {
 		pager = (ViewPager) view.findViewById(R.id.home_pager);
 		indicator = (TabPageIndicator) view
 				.findViewById(R.id.home_indicator);
+        indicator.setFillViewport(true);
 		indicator.setVisibility(View.GONE);
 		pager.setVisibility(View.INVISIBLE);
 		

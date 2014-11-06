@@ -433,35 +433,36 @@ public class BaseSlideMenuActivity extends SlidingFragmentActivity implements
 				if (sharedPreferenceManager.isRating()) {
 					shutDown();
 				} else {
-					new RatingDialog(this, new MyClickListener() {
-
-						@Override
-						public void onRemindLater(Dialog dialog) {
-							// TODO Auto-generated method stub
-							dialog.dismiss();
-							shutDown();
-						}
-
-						@Override
-						public void onRating(Dialog dialog) {
-							// TODO Auto-generated method stub
-							sharedPreferenceManager.setRating(true);
-							dialog.dismiss();
-							IntentUtil
-									.openAppStore(BaseSlideMenuActivity.this,
-											BaseSlideMenuActivity.this
-													.getPackageName());
-							shutDown();
-						}
-
-						@Override
-						public void onDimiss(Dialog dialog) {
-							// TODO Auto-generated method stub
-							sharedPreferenceManager.setRating(true);
-							dialog.dismiss();
-							shutDown();
-						}
-					});
+                    shutDown();
+//					new RatingDialog(this, new MyClickListener() {
+//
+//						@Override
+//						public void onRemindLater(Dialog dialog) {
+//							// TODO Auto-generated method stub
+//							dialog.dismiss();
+//							shutDown();
+//						}
+//
+//						@Override
+//						public void onRating(Dialog dialog) {
+//							// TODO Auto-generated method stub
+//							sharedPreferenceManager.setRating(true);
+//							dialog.dismiss();
+//							IntentUtil
+//									.openAppStore(BaseSlideMenuActivity.this,
+//											BaseSlideMenuActivity.this
+//													.getPackageName());
+//							shutDown();
+//						}
+//
+//						@Override
+//						public void onDimiss(Dialog dialog) {
+//							// TODO Auto-generated method stub
+//							sharedPreferenceManager.setRating(true);
+//							dialog.dismiss();
+//							shutDown();
+//						}
+//					});
 				}
 
 			} else {
