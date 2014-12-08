@@ -160,8 +160,8 @@ public class PlayerDetailsRelatedFragment extends BaseFragmentPlayerDetail
 				mPlayerFragment.itemInfo = tmpItemInfo;
 
 				// Update view vod
-				ApiManager.callUpdateViewVod(baseSlideMenuActivity,
-						mPlayerFragment.itemInfo.getId());
+//				ApiManager.callUpdateViewVod(baseSlideMenuActivity,
+//						mPlayerFragment.itemInfo.getId());
 
 				// Google analytics track vod
 				baseSlideMenuActivity.trackEvent(
@@ -173,8 +173,8 @@ public class PlayerDetailsRelatedFragment extends BaseFragmentPlayerDetail
 				mPlayerFragment.itemInfo = tmpItemInfo;
 
 				// Update view Episode
-				ApiManager.callUpdateViewEpisode(baseSlideMenuActivity,
-						mPlayerFragment.itemInfo.getId());
+//				ApiManager.callUpdateViewEpisode(baseSlideMenuActivity,
+//						mPlayerFragment.itemInfo.getId());
 			}
 			if (mPlayerFragment.mVideoView != null) {
 				mPlayerFragment.mVideoView.stopPlayback();

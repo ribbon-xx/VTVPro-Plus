@@ -15,10 +15,8 @@
  */
 package mdn.vtvpluspro.gcm;
 
-import mdn.vtvpluspro.fragment.HomeFragment;
 import mdn.vtvpluspro.network.ApiManager;
 import mdn.vtvpluspro.network.IApiCallback;
-import mdn.vtvpluspro.network.NetworkUtility;
 import android.content.Context;
 import android.util.Log;
 
@@ -49,17 +47,31 @@ public final class ServerUtilities {
 
 	public static void postRegistrationId(final Context context,
 			final String regId) {
-		ApiManager.callUpdateGCMRegistrationId(context, new IApiCallback() {
-
+//		ApiManager.callUpdateGCMRegistrationId(context, new IApiCallback() {
+//
+//			@Override
+//			public void responseSuccess(String response) {
+//				Log.e("response", response);
+//
+//			}
+//
+//			@Override
+//			public void responseFailWithCode(int statusCode) {
+//			}
+//		}, regId, "android", HomeFragment.APP_NAME, NetworkUtility.getIpAddress(), NetworkUtility.getTypeNetwork(context));
+		
+		// update
+		ApiManager.callUrlPushNotification(context, new IApiCallback() {
+			
 			@Override
 			public void responseSuccess(String response) {
 				Log.e("response", response);
-
 			}
-
+			
 			@Override
 			public void responseFailWithCode(int statusCode) {
+				Log.e("response", "responseFailWithCode:" + statusCode);
 			}
-		}, regId, "android", HomeFragment.APP_NAME, NetworkUtility.getIpAddress(), NetworkUtility.getTypeNetwork(context));
+		}, regId);
 	}
 }

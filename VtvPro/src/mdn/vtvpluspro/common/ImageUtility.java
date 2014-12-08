@@ -195,6 +195,14 @@ public class ImageUtility {
 		imageLoader.displayImage(urlString, viewer, imageOptions);
 	}
 
+	public static void loadFullBitmapFromUrl(Context context, String urlString,
+			ImageView viewer, DisplayImageOptions imageOptions) {
+		if (imageLoader == null) {
+			initialize(context);
+		}
+		imageLoader.displayImage(urlString, viewer, imageOptions);
+	}
+	
 	public static void loadBitmapFromUrl(Context context, String urlString,
 			ImageLoadingListener listener, ImageView viewer) {
 		if (imageLoader == null) {

@@ -19,8 +19,11 @@ import mdn.vtvpluspro.network.WebServiceConfig;
 import mdn.vtvpluspro.object.ItemInteraction;
 import mdn.vtvpluspro.object.objMenu;
 import android.R.array;
+import android.app.FragmentManager.OnBackStackChangedListener;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -39,6 +42,7 @@ public class ListMenuFragment extends BaseFragment implements OnClickListener, O
 	private LinearLayout layLogin;
 	private LinearLayout layProfile;
 	private LinearLayout laySetting;
+	private LinearLayout layRegister;
 	private TextView layBuyPackage;
 	private TextView layChargeMoney;
 	private TextView layRuleCharge;
@@ -71,6 +75,8 @@ public class ListMenuFragment extends BaseFragment implements OnClickListener, O
 		layProfile.setOnClickListener(this);
 		laySetting = (LinearLayout) view.findViewById(R.id.layMenuSetting);
 		laySetting.setOnClickListener(this);
+		layRegister = (LinearLayout) view.findViewById(R.id.ll_dangki);
+		layRegister.setOnClickListener(this);
 		lvVideos = (ListView) view.findViewById(R.id.lv_video);
 //		layBuyPackage = (TextView) view.findViewById(R.id.tvMuagoicuoc);
 //		layBuyPackage.setOnClickListener(this);
@@ -101,6 +107,7 @@ public class ListMenuFragment extends BaseFragment implements OnClickListener, O
 //		}
 		
 		arrMenu.add(new objMenu(6, getString(R.string.slidemenu_channel), true));
+		arrMenu.add(new objMenu(7, getString(R.string.slidemenu_huy_dk), false));
 		callCategoryVideoMenuApi();
 		
 		apdateMenuLeft = new AdapterMenuLeft(getActivity(), R.layout.slidemenu_item_listview_video, arrMenu);
@@ -136,6 +143,11 @@ public class ListMenuFragment extends BaseFragment implements OnClickListener, O
 		case R.id.layMenuSetting:
 			posClick = -1;
 			break;
+		case R.id.ll_dangki:
+			posClick = -1;
+			actionRegisterClick();
+			break;
+			
 //		case R.id.tvMuagoicuoc:
 //			posClick = -1;
 //			actionChargePackageClick();
@@ -202,35 +214,47 @@ public class ListMenuFragment extends BaseFragment implements OnClickListener, O
 		}
 	}
 
-	private void actionChargePackageClick() {
-		baseSlideMenuActivity.showContent();
-		if (baseSlideMenuActivity.mContent instanceof WebviewChargeFragment) {
-			return;
-		}
-		nextFragmentChargePackage();
-	}
-
-	private void actionSupportClick(boolean isHotro) {
-		baseSlideMenuActivity.showContent();
-		Bundle bundle = new Bundle();
-		bundle.putString("url_hotro", WebServiceConfig.getUrlSupport(isHotro));
-		AllWebviewFragment fr = new AllWebviewFragment();
-		fr.setArguments(bundle);
-		if (baseSlideMenuActivity.isMainFragment()) {
-			baseSlideMenuActivity.switchContent(fr, true);
+	private void actionRegisterClick() {
+		Fragment unregister = new RegisterFragment();
+		FragmentManager fm = getActivity().getSupportFragmentManager();
+		Fragment fg = fm.findFragmentById(R.id.layoutContent);
+		if (fg instanceof RegisterFragment) {
+			
 		} else {
-			baseSlideMenuActivity.switchContent(fr, false);
+			baseSlideMenuActivity.switchContent(unregister, true);
 		}
+		baseSlideMenuActivity.getSlidingMenu().toggle();
 	}
+		
+//	private void actionChargePackageClick() {
+//		baseSlideMenuActivity.showContent();
+//		if (baseSlideMenuActivity.mContent instanceof WebviewChargeFragment) {
+//			return;
+//		}
+//		nextFragmentChargePackage();
+//	}
 
-	private void nextFragmentChargePackage() {
-		WebviewChargeFragment fr = new WebviewChargeFragment();
-		if (baseSlideMenuActivity.isMainFragment()) {
-			baseSlideMenuActivity.switchContent(fr, true);
-		} else {
-			baseSlideMenuActivity.switchContent(fr, false);
-		}
-	}
+//	private void actionSupportClick(boolean isHotro) {
+//		baseSlideMenuActivity.showContent();
+//		Bundle bundle = new Bundle();
+//		bundle.putString("url_hotro", WebServiceConfig.getUrlSupport(isHotro));
+//		AllWebviewFragment fr = new AllWebviewFragment();
+//		fr.setArguments(bundle);
+//		if (baseSlideMenuActivity.isMainFragment()) {
+//			baseSlideMenuActivity.switchContent(fr, true);
+//		} else {
+//			baseSlideMenuActivity.switchContent(fr, false);
+//		}
+//	}
+
+//	private void nextFragmentChargePackage() {
+//		WebviewChargeFragment fr = new WebviewChargeFragment();
+//		if (baseSlideMenuActivity.isMainFragment()) {
+//			baseSlideMenuActivity.switchContent(fr, true);
+//		} else {
+//			baseSlideMenuActivity.switchContent(fr, false);
+//		}
+//	}
 
 	private void callCategoryVideoMenuApi() {
 		arrMenuTmp = new ArrayList<objMenu>();
@@ -244,6 +268,7 @@ public class ListMenuFragment extends BaseFragment implements OnClickListener, O
 				
 				try {
 					apdateMenuLeft.removeItem(arrMenu.size()-1);
+					apdateMenuLeft.removeItem(arrMenu.size()-2);
 					lvVideos.removeAllViewsInLayout();
 					apdateMenuLeft.notifyDataSetChanged();
 					
@@ -263,6 +288,7 @@ public class ListMenuFragment extends BaseFragment implements OnClickListener, O
 					}
 					
 					arrMenu.add(new objMenu(6, getString(R.string.slidemenu_channel), true));
+					arrMenu.add(new objMenu(7, getString(R.string.slidemenu_huy_dk), false));
 					apdateMenuLeft.notifyDataSetChanged();
 					
 					Log.d("response: " + arrMenuTmp);
@@ -338,6 +364,20 @@ public class ListMenuFragment extends BaseFragment implements OnClickListener, O
 			baseSlideMenuActivity.switchContent(event, true);
 			baseSlideMenuActivity.getSlidingMenu().toggle();
 		}
+		
+		// Cancel to register
+		if (menu.id == 7) {
+			Fragment unregister = new UnregisterFragment();
+			FragmentManager fm = getActivity().getSupportFragmentManager();
+			Fragment fg = fm.findFragmentById(R.id.layoutContent);
+			if (fg instanceof UnregisterFragment) {
+				
+			} else {
+				baseSlideMenuActivity.switchContent(unregister, true);
+			}
+			
+			baseSlideMenuActivity.getSlidingMenu().toggle();
+		}
 	}
-
+	
 }

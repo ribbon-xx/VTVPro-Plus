@@ -464,20 +464,22 @@ public class PlayerFragment extends ChargingFragment implements OnInfoListener,
 
 	@Override
 	protected boolean needCheckCharging() {
-		if(ChannelInfo.class.isInstance(itemInfo)){
-			if(((ChannelInfo)itemInfo).isFree()){
-				return false;
-			}
-		}
-		if(VodInfo.class.isInstance(itemInfo)){
-			if(((VodInfo)itemInfo).isFree()){
-				return false;
-			}
-		}
-		ProfileInfo profile = getProfile();
-		if(profile != null && !TextUtils.isEmpty(profile.pUserName)){
-			return true;
-		}
+//		if(ChannelInfo.class.isInstance(itemInfo)){
+//			if(((ChannelInfo)itemInfo).isFree()){
+//				return false;
+//			}
+//		}
+//		if(VodInfo.class.isInstance(itemInfo)){
+//			if(((VodInfo)itemInfo).isFree()){
+//				return false;
+//			}
+//		}
+//		ProfileInfo profile = getProfile();
+//		if(profile != null && !TextUtils.isEmpty(profile.pUserName)){
+//			return true;
+//		}
+//		return false;
+		
 		return false;
 	}
 

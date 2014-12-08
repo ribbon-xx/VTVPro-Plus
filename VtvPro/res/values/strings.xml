@@ -90,6 +90,7 @@
     <string name="taikhoan">Tài khoản</string>
     <string name="dangnhap">Đăng nhập</string>
     <string name="caidat">Cài đặt</string>
+    <string name="slidemenu_register">Đăng ký</string>
     <string name="danhmuc">Danh mục</string>
     <string name="slidemenu_event">Sự kiện</string>
     <string name="slidemenu_lichthidau">Lịch thi đấu</string>
@@ -97,6 +98,7 @@
     <string name="slidemenu_xephang">Xếp hạng</string>
     <string name="slidemenu_video">VIDEO</string>
     <string name="slidemenu_channel">Kênh</string>
+    <string name="slidemenu_huy_dk">Hủy đăng ký</string>
     
     <string name="muagoicuoc">Mua gói cước VTV Plus</string>
     <string name="naptiensmart">Nạp tiền SmartTV/OTT Box</string>

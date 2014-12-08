@@ -231,15 +231,21 @@ public final class ApiManager {
 				WebServiceConfig.urlUpdateViewVod(), false);
 	}
 
-	public static void callUpdateGCMRegistrationId(Context context,
-	                                               IApiCallback apiCallback, String regisId, String type,
-	                                               String appName, String ip, String typeNetwork) {
-		List<NameValuePair> parameters = WebServiceUtility
-				.createUpdateGCMRegistrationId(regisId, type, appName, ip, typeNetwork);
-		callHttpPost(context, apiCallback, parameters,
-				WebServiceConfig.gcmPostRegistrationId, false);
-	}
+//	public static void callUpdateGCMRegistrationId(Context context,
+//	                                               IApiCallback apiCallback, String regisId, String type,
+//	                                               String appName, String ip, String typeNetwork) {
+//		List<NameValuePair> parameters = WebServiceUtility
+//				.createUpdateGCMRegistrationId(regisId, type, appName, ip, typeNetwork);
+//		callHttpPost(context, apiCallback, parameters,
+//				WebServiceConfig.gcmPostRegistrationId, false);
+//	}
 
+	public static void callUrlPushNotification(Context context, IApiCallback apiCallback, String deviceid) {
+//		callHttpGet(context, null, WebServiceConfig.getUrlLogPush(deviceid, messId), false);
+		
+		callHttpGet(context, apiCallback, WebServiceConfig.getUrlPushNotification(deviceid), false);
+	}
+	
 	public static void callIpAdress(Context context, IApiCallback apiCallback) {
 		callHttpGet(context, apiCallback, "http://api.vtvsport.com.vn/index.php/GetIp/", true);
 	}

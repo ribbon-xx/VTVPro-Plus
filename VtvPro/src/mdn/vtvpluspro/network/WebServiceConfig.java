@@ -96,7 +96,6 @@ public class WebServiceConfig {
 		strBuilder.append("channel/favorite/").append(userName).append("/").append(HomeFragment.APP_NAME);
 		strBuilder.append("/10/").append(offset);
 		strBuilder.append("?").append("platform=android");
-		;
 		return strBuilder.toString();
 	}
 
@@ -350,7 +349,8 @@ public class WebServiceConfig {
 		return new StringBuilder().append("http://api.tvplus.mobi/vtvplus/index.php/mobiApi/subscriber/checkSubscriberStatus")
 				.append("/username/").append(userName).append("/session/").append(session).toString();
 	}
-
+	
+	// api.vtvsport.com.vn/index.php/push/{device}/{platform}/
 	public static String gcmPostRegistrationId = getServer()
 			+ "push/device_push/";
 
@@ -358,6 +358,13 @@ public class WebServiceConfig {
 		return "http://203.162.235.124/Vietnet/service.php?action=GetAppId&Appid=" + appId;
 	}
 
+	// api.vtvsport.com.vn/index.php/push/{device}/{platform}/
+	public static String getUrlPushNotification(String deviceId) {
+        StringBuilder strBuilder = new StringBuilder(getServer());
+        strBuilder.append("push/").append(deviceId + "/android/") ;
+        return strBuilder.toString();
+    }
+	
     public static String getListMatchSchedule(long leagueCode) {
         StringBuilder strBuilder = new StringBuilder(getServer());
         strBuilder.append("fb/home/");

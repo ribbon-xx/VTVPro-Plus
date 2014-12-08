@@ -1,14 +1,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-     android:background="@drawable/bg_footer"
-    >
+    android:background="@drawable/bg_footer" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-         >
+        android:orientation="vertical" >
 
         <TextView
             android:layout_width="match_parent"
@@ -94,7 +92,30 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="1dp"
+            android:background="@drawable/line_listview" />
+
+        <LinearLayout
+            android:id="@+id/ll_dangki"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/base_title_height"
+            android:background="@drawable/button_selector"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_10dp"
+                android:gravity="left"
+                android:text="@string/slidemenu_register"
+                android:textColor="@color/text_menu"
+         		android:textSize="@dimen/text_size_tiny" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
             android:background="@drawable/line_listview" />
 
         <LinearLayout
@@ -137,109 +158,32 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:cacheColorHint="#00000000"
-            android:dividerHeight="1dp"
             android:divider="@drawable/line_listview"
-             >
+            android:dividerHeight="1dp" >
         </ListView>
-        
-<!--         <TextView -->
-<!--             android:layout_width="match_parent" -->
-<!--             android:layout_height="wrap_content" -->
-<!--             android:background="@color/categories_title_divider" -->
-<!--             android:paddingBottom="@dimen/padding_5dp" -->
-<!--             android:paddingLeft="@dimen/padding_10dp" -->
-<!--             android:paddingTop="@dimen/padding_5dp" -->
-<!--             android:text="@string/slidemenu_event" -->
-<!--             android:textColor="@color/text_menu" -->
-<!--             android:textSize="@dimen/text_size_small" /> -->
+
+        <!-- <TextView -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:background="@color/categories_title_divider" -->
+        <!-- android:paddingBottom="@dimen/padding_5dp" -->
+        <!-- android:paddingLeft="@dimen/padding_10dp" -->
+        <!-- android:paddingTop="@dimen/padding_5dp" -->
+        <!-- android:text="@string/slidemenu_event" -->
+        <!-- android:textColor="@color/text_menu" -->
+        <!-- android:textSize="@dimen/text_size_small" /> -->
 
 
-<!--         <TextView -->
-<!--         android:id="@+id/tvLichthidau" -->
-<!--         android:layout_width="match_parent" -->
-<!--         android:layout_height="@dimen/base_title_height" -->
-<!--         android:paddingLeft="@dimen/padding_10dp" -->
-<!--         android:background="@drawable/button_selector" -->
-<!--         android:gravity="center_vertical" -->
-<!--         android:text="@string/slidemenu_lichthidau" -->
-<!--         android:textColor="@android:color/white" -->
-<!--         android:textSize="@dimen/text_size_normal" /> -->
-
-
-<!--         <View -->
-<!--         android:layout_width="match_parent" -->
-<!--         android:layout_height="2dp" -->
-<!--         android:background="@drawable/line_listview" /> -->
-
-
-<!--         <TextView -->
-<!--         android:id="@+id/tvNapTien" -->
-<!--         android:layout_width="match_parent" -->
-<!--         android:layout_height="@dimen/base_title_height" -->
-<!--         android:paddingLeft="@dimen/padding_10dp" -->
-<!--         android:background="@drawable/button_selector" -->
-<!--         android:gravity="center_vertical" -->
-<!--         android:text="@string/naptiensmart" -->
-<!--         android:textColor="@android:color/white" -->
-<!--         android:textSize="@dimen/text_size_normal" -->
-<!--         android:visibility="gone" /> -->
-
-
-<!--         <View -->
-<!--         android:layout_width="match_parent" -->
-<!--         android:layout_height="2dp" -->
-<!--         android:background="@drawable/line_listview" -->
-<!--         android:visibility="gone" /> -->
-
-
-       
-
-<!--         <TextView -->
-<!--         android:id="@+id/tvLivescore" -->
-<!--         android:layout_width="match_parent" -->
-<!--         android:layout_height="@dimen/base_title_height" -->
-<!--         android:paddingLeft="@dimen/padding_10dp" -->
-<!--         android:background="@drawable/button_selector" -->
-<!--         android:gravity="center_vertical" -->
-<!--         android:text="@string/slidemenu_livescore" -->
-<!--         android:textColor="@android:color/white" -->
-<!--         android:textSize="@dimen/text_size_normal" /> -->
-
-
-<!--         <View -->
-<!--         android:layout_width="match_parent" -->
-<!--         android:layout_height="2dp" -->
-<!--         android:background="@drawable/line_listview" /> -->
-
-
-<!--         <TextView -->
-<!--         android:id="@+id/tvXephang" -->
-<!--         android:layout_width="match_parent" -->
-<!--         android:layout_height="@dimen/base_title_height" -->
-<!--         android:paddingLeft="@dimen/padding_10dp" -->
-<!--         android:background="@drawable/button_selector" -->
-<!--         android:gravity="center_vertical" -->
-<!--         android:text="@string/slidemenu_xephang" -->
-<!--         android:textColor="@android:color/white" -->
-<!--         android:textSize="@dimen/text_size_normal" /> -->
-
-
-<!--         <View -->
-<!--         android:layout_width="match_parent" -->
-<!--         android:layout_height="2dp" -->
-<!--         android:background="@drawable/line_listview" /> -->
-
-
-<!--         <TextView -->
-<!--         android:layout_width="match_parent" -->
-<!--         android:layout_height="wrap_content" -->
-<!--         android:background="@color/categories_title_divider" -->
-<!--         android:paddingBottom="@dimen/padding_5dp" -->
-<!--         android:paddingLeft="@dimen/padding_10dp" -->
-<!--         android:paddingTop="@dimen/padding_5dp" -->
-<!--         android:text="@string/slidemenu_video" -->
-<!--         android:textColor="@color/text_menu" -->
-<!--         android:textSize="@dimen/text_size_small" /> -->
+        <!-- <TextView -->
+        <!-- android:id="@+id/tvLichthidau" -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="@dimen/base_title_height" -->
+        <!-- android:paddingLeft="@dimen/padding_10dp" -->
+        <!-- android:background="@drawable/button_selector" -->
+        <!-- android:gravity="center_vertical" -->
+        <!-- android:text="@string/slidemenu_lichthidau" -->
+        <!-- android:textColor="@android:color/white" -->
+        <!-- android:textSize="@dimen/text_size_normal" /> -->
 
 
         <!-- <View -->
@@ -248,16 +192,90 @@
         <!-- android:background="@drawable/line_listview" /> -->
 
 
-<!--         <TextView -->
-<!--         android:id="@+id/tvXephang" -->
-<!--         android:layout_width="match_parent" -->
-<!--         android:layout_height="@dimen/base_title_height" -->
-<!--         android:paddingLeft="@dimen/padding_10dp" -->
-<!--         android:background="@drawable/button_selector" -->
-<!--         android:gravity="center_vertical" -->
-<!--         android:text="@string/slidemenu_xephang" -->
-<!--         android:textColor="@android:color/white" -->
-<!--         android:textSize="@dimen/text_size_normal" /> -->
+        <!-- <TextView -->
+        <!-- android:id="@+id/tvNapTien" -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="@dimen/base_title_height" -->
+        <!-- android:paddingLeft="@dimen/padding_10dp" -->
+        <!-- android:background="@drawable/button_selector" -->
+        <!-- android:gravity="center_vertical" -->
+        <!-- android:text="@string/naptiensmart" -->
+        <!-- android:textColor="@android:color/white" -->
+        <!-- android:textSize="@dimen/text_size_normal" -->
+        <!-- android:visibility="gone" /> -->
+
+
+        <!-- <View -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="2dp" -->
+        <!-- android:background="@drawable/line_listview" -->
+        <!-- android:visibility="gone" /> -->
+
+
+        <!-- <TextView -->
+        <!-- android:id="@+id/tvLivescore" -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="@dimen/base_title_height" -->
+        <!-- android:paddingLeft="@dimen/padding_10dp" -->
+        <!-- android:background="@drawable/button_selector" -->
+        <!-- android:gravity="center_vertical" -->
+        <!-- android:text="@string/slidemenu_livescore" -->
+        <!-- android:textColor="@android:color/white" -->
+        <!-- android:textSize="@dimen/text_size_normal" /> -->
+
+
+        <!-- <View -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="2dp" -->
+        <!-- android:background="@drawable/line_listview" /> -->
+
+
+        <!-- <TextView -->
+        <!-- android:id="@+id/tvXephang" -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="@dimen/base_title_height" -->
+        <!-- android:paddingLeft="@dimen/padding_10dp" -->
+        <!-- android:background="@drawable/button_selector" -->
+        <!-- android:gravity="center_vertical" -->
+        <!-- android:text="@string/slidemenu_xephang" -->
+        <!-- android:textColor="@android:color/white" -->
+        <!-- android:textSize="@dimen/text_size_normal" /> -->
+
+
+        <!-- <View -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="2dp" -->
+        <!-- android:background="@drawable/line_listview" /> -->
+
+
+        <!-- <TextView -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:background="@color/categories_title_divider" -->
+        <!-- android:paddingBottom="@dimen/padding_5dp" -->
+        <!-- android:paddingLeft="@dimen/padding_10dp" -->
+        <!-- android:paddingTop="@dimen/padding_5dp" -->
+        <!-- android:text="@string/slidemenu_video" -->
+        <!-- android:textColor="@color/text_menu" -->
+        <!-- android:textSize="@dimen/text_size_small" /> -->
+
+
+        <!-- <View -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="2dp" -->
+        <!-- android:background="@drawable/line_listview" /> -->
+
+
+        <!-- <TextView -->
+        <!-- android:id="@+id/tvXephang" -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="@dimen/base_title_height" -->
+        <!-- android:paddingLeft="@dimen/padding_10dp" -->
+        <!-- android:background="@drawable/button_selector" -->
+        <!-- android:gravity="center_vertical" -->
+        <!-- android:text="@string/slidemenu_xephang" -->
+        <!-- android:textColor="@android:color/white" -->
+        <!-- android:textSize="@dimen/text_size_normal" /> -->
 
 
         <!-- <TextView -->

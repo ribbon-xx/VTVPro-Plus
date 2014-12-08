@@ -1236,5 +1236,5 @@ public class HomeFragment extends BaseFragment implements OnTouchListener, OnCli
 			break;
 		}
 	}
-	
+
 }
