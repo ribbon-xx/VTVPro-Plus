@@ -107,13 +107,13 @@
                 android:layout_height="wrap_content"
                 android:visibility="gone" >
 
-                <mdn.vtvpluspro.library.viewflow.ViewFlow
+                <mdn.vtvsport.library.viewflow.ViewFlow
                     android:id="@+id/galHomeBanner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" >
-                </mdn.vtvpluspro.library.viewflow.ViewFlow>
+                </mdn.vtvsport.library.viewflow.ViewFlow>
 
-                <mdn.vtvpluspro.library.viewflow.CircleFlowIndicator
+                <mdn.vtvsport.library.viewflow.CircleFlowIndicator
                     android:id="@+id/indHomeGallery"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

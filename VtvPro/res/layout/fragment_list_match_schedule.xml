@@ -94,7 +94,7 @@
                     android:background="@color/list_header_background"
                     android:text="@string/event_schedule"/>
 
-            <mdn.vtvpluspro.common.ExpandableHeightListView
+            <mdn.vtvsport.common.ExpandableHeightListView
                     android:id="@+id/fragment_list_match_schedule_league_ongoing_list"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -160,7 +160,7 @@
                     android:background="@color/list_header_background"
                     android:text="@string/event_result"/>
 
-            <mdn.vtvpluspro.common.ExpandableHeightListView
+            <mdn.vtvsport.common.ExpandableHeightListView
                     android:id="@+id/fragment_list_match_schedule_league_past_list"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

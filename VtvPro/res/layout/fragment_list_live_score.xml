@@ -61,7 +61,7 @@
                     android:background="@color/list_header_background"
                     android:text="@string/live_score_sub_title"/>
 
-            <mdn.vtvpluspro.common.ExpandableHeightListView
+            <mdn.vtvsport.common.ExpandableHeightListView
                     android:id="@+id/fragment_live_score_current_list"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -124,7 +124,7 @@
                     android:background="@color/list_header_background"
                     android:text="@string/live_score_sub_title"/>
 
-            <mdn.vtvpluspro.common.ExpandableHeightListView
+            <mdn.vtvsport.common.ExpandableHeightListView
                     android:id="@+id/fragment_live_score_result_list"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -188,7 +188,7 @@
                     android:background="@color/list_header_background"
                     android:text="@string/live_score_sub_title"/>
 
-            <mdn.vtvpluspro.common.ExpandableHeightListView
+            <mdn.vtvsport.common.ExpandableHeightListView
                     android:id="@+id/fragment_live_score_future_list"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

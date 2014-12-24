@@ -15,7 +15,7 @@
  *******************************************************************************/
 package com.handmark.pulltorefreshscrollview.library.internal;
 
-import mdn.vtvplus.R;
+import mdn.vtvsport.R;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.ColorStateList;

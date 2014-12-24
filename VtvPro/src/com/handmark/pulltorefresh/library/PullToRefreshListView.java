@@ -15,7 +15,7 @@
  *******************************************************************************/
 package com.handmark.pulltorefresh.library;
 
-import mdn.vtvplus.R;
+import mdn.vtvsport.R;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
