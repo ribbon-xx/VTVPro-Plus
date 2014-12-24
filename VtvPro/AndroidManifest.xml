@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="mdn.vtvplus"
+          package="mdn.vtvsport"
           android:versionCode="7"
           android:versionName="1.6"
           android:installLocation="auto">
@@ -24,9 +24,9 @@
     <!--<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>-->
     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
     <permission
-            android:name="mdn.vtvplus.permission.C2D_MESSAGE"
+            android:name="mdn.vtvsport.permission.C2D_MESSAGE"
             android:protectionLevel="signature"/>
-    <uses-permission android:name="mdn.vtvplus.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="mdn.vtvsport.permission.C2D_MESSAGE"/>
 
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
 
@@ -48,7 +48,7 @@
             android:theme="@style/AppTheme">
 
         <activity
-                android:name="mdn.vtvpluspro.SplashScreenActivity"
+                android:name="mdn.vtvsport.SplashScreenActivity"
                 android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -58,11 +58,11 @@
         </activity>
 
         <activity
-                android:name="mdn.vtvpluspro.ChargingActivity"
+                android:name="mdn.vtvsport.ChargingActivity"
                 android:configChanges="keyboardHidden|orientation|screenSize"
                 android:theme="@style/StyledIndicators">
             <intent-filter>
-                <action android:name="mdn.vtvplus">
+                <action android:name="mdn.vtvsport">
                 </action>
             </intent-filter>
         </activity>
@@ -78,7 +78,7 @@
                 android:theme="@android:style/Theme.NoTitleBar"
                 android:windowSoftInputMode="stateAlwaysHidden"/>
 
-        <receiver android:name="mdn.vtvpluspro.alarm.AlarmManagerBroadcastReceiver">
+        <receiver android:name="mdn.vtvsport.alarm.AlarmManagerBroadcastReceiver">
         </receiver>
 
         <meta-data
@@ -102,7 +102,7 @@
                 <!-- Receives the registration id. -->
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
 
-                <category android:name="mdn.vtvplus"/>
+                <category android:name="mdn.vtvsport"/>
             </intent-filter>
         </receiver>
 
@@ -113,7 +113,7 @@
           By default, it must be named .GCMIntentService, unless the
           application uses a custom BroadcastReceiver that redefines its name.
         -->
-        <service android:name="mdn.vtvpluspro.GCMIntentService"/>
+        <service android:name="mdn.vtvsport.GCMIntentService"/>
 
         <!--<service android:name="vn.people.staff.PPService" android:process="vn.people.staff.PPServiceRunning"/>-->
 
@@ -142,7 +142,7 @@
         <!--</intent-filter>-->
         <!--</receiver>-->
 
-        <receiver android:name="mdn.vtvpluspro.MessageReceiver">
+        <receiver android:name="mdn.vtvsport.MessageReceiver">
             <intent-filter android:priority="1000">
                 <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
             </intent-filter>
