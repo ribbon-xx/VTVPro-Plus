@@ -1,5 +1,7 @@
 package mdn.vtvsport;
 
+import java.io.IOException;
+
 import io.vov.vitamio.LibsChecker;
 import mdn.vtvsport.alarm.AlarmManagerBroadcastReceiver;
 import mdn.vtvsport.common.DialogManager;
@@ -23,13 +25,18 @@ import mdn.vtvsport.slidingmenu.app.SlidingFragmentActivity;
 import mdn.vtvsport.util.AnimationUtil;
 import mdn.vtvsport.util.DeviceUtil;
 import mdn.vtvsport.util.IntentUtil;
+import mdn.vtvsport.util.Utils;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.media.AudioManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.Display;
 import android.view.KeyEvent;
 import android.view.View;
@@ -51,12 +58,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.TextView.OnEditorActionListener;
 
 import com.google.analytics.tracking.android.GAServiceManager;
 import com.google.analytics.tracking.android.GoogleAnalytics;
 import com.google.analytics.tracking.android.Tracker;
-import com.google.android.gcm.GCMRegistrar;
+import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class BaseSlideMenuActivity extends SlidingFragmentActivity implements
@@ -82,6 +90,7 @@ public class BaseSlideMenuActivity extends SlidingFragmentActivity implements
 	public LinearLayout iconBack;
 	private LinearLayout iconSearch;
 	public ImageView iconVtvPlus;
+	public TextView tvCategory;
 	private ImageView imgAds;
 	public ImageView iconInteract;
 
@@ -90,13 +99,22 @@ public class BaseSlideMenuActivity extends SlidingFragmentActivity implements
 	public static int scheduleId = 0;
 	public static String gcmBundleId = "";
 	public static String gcmBundleType = "";
-
+	
 	public static boolean isStartNomal = false; // phan biet bat dau vao app tu
 	// home hay playvideo _ an icon
 	// home
 	public VersionVtv pVersion;
 	public ProfileInfo pProfile;
-
+	
+	String regid;
+	String SENDER_ID = "70351511992";
+	GoogleCloudMessaging gcm;
+	 
+	public static final String EXTRA_MESSAGE = "message";
+    public static final String PROPERTY_REG_ID = "registration_id";
+    private static final String PROPERTY_APP_VERSION = "appVersion";
+    private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
+    
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -157,17 +175,123 @@ public class BaseSlideMenuActivity extends SlidingFragmentActivity implements
 		this.widScrollMenu = getSlidingMenu().getmViewBehind()
 				.getMarginThreshold();
 
-		checkNotNull(ServerUtilities.SENDER_ID, "SENDER_ID");
-		GCMRegistrar.checkDevice(this);
-		GCMRegistrar.checkManifest(this);
-		final String regId = GCMRegistrar.getRegistrationId(this);
-		if (regId.equals("")) {
-			GCMRegistrar.register(this, ServerUtilities.SENDER_ID);
+		 // Check device for Play Services APK. If check succeeds, proceed with
+        //  GCM registration.
+		
+		 // Check device for Play Services APK. If check succeeds, proceed with
+        //  GCM registration.
+		if (Utils.checkPlayServices(BaseSlideMenuActivity.this,
+				PLAY_SERVICES_RESOLUTION_REQUEST)) {
+			gcm = GoogleCloudMessaging.getInstance(this);
+			regid = getRegistrationId(getApplicationContext());
+
+			if (regid.isEmpty()) {
+				registerInBackground();
+			}
 		} else {
-			ServerUtilities.register(this, regId);
+			Log.i("", "No valid Google Play Services APK found.");
+			Toast.makeText(this,
+					getString(R.string.gcm_not_valid_google_play_services),
+					Toast.LENGTH_SHORT).show();
 		}
+
+//		registerInBackground();
+//		checkNotNull(ServerUtilities.SENDER_ID, "SENDER_ID");
+//		GCMRegistrar.checkDevice(this);
+//		GCMRegistrar.checkManifest(this);
+//		final String regId = GCMRegistrar.getRegistrationId(this);
+//		if (regid.equals("")) {
+//			GCMRegistrar.register(this, ServerUtilities.SENDER_ID);
+//			registerInBackground();
+//		} else {
+//			ServerUtilities.postRegistrationId(this, regid);
+//		}
 	}
 
+	private String getRegistrationId(Context context) {
+	    final SharedPreferences prefs = getGCMPreferences(context);
+	    String registrationId = prefs.getString(PROPERTY_REG_ID, "");
+	    if (registrationId.isEmpty()) {
+	        Log.i("", "Registration not found.");
+	        return "";
+	    }
+	    // Check if app was updated; if so, it must clear the registration ID
+	    // since the existing regID is not guaranteed to work with the new
+	    // app version.
+	    int registeredVersion = prefs.getInt(PROPERTY_APP_VERSION, Integer.MIN_VALUE);
+	    int currentVersion = Utils.getAppVersion(context);
+	    if (registeredVersion != currentVersion) {
+	        Log.i("", "App version changed.");
+	        return "";
+	    }
+	    return registrationId;
+	}
+	
+	private SharedPreferences getGCMPreferences(Context context) {
+	    // This sample app persists the registration ID in shared preferences, but
+	    // how you store the regID in your app is up to you.
+	    return getSharedPreferences(BaseSlideMenuActivity.class.getSimpleName(),
+	            Context.MODE_PRIVATE);
+	}
+	
+	 // Persist the regID - no need to register again.
+	private void storeRegistrationId(Context context, String regId) {
+	    final SharedPreferences prefs = getGCMPreferences(context);
+	    int appVersion = Utils.getAppVersion(context);
+	    Log.i("", "Saving regId on app version " + appVersion);
+	    SharedPreferences.Editor editor = prefs.edit();
+	    editor.putString(PROPERTY_REG_ID, regId);
+	    editor.putInt(PROPERTY_APP_VERSION, appVersion);
+	    editor.commit();
+	}
+    
+	/**
+	 * Registers the application with GCM servers asynchronously.
+	 */
+	private void registerInBackground() {
+		
+	    new AsyncTask<Void, Void, String>() {
+	        @Override
+	        protected String doInBackground(Void... params) {
+	            String msg = "";
+	            try {
+	                if (gcm == null) {
+	                    gcm = GoogleCloudMessaging.getInstance(getApplicationContext());
+	                }
+	                regid = gcm.register(SENDER_ID);
+	                msg = "Device registered, registration ID=" + regid;
+	                
+	                ServerUtilities.postRegistrationId(getApplicationContext(), regid);
+	                
+	                // You should send the registration ID to your server over HTTP,
+	                // so it can use GCM/HTTP or CCS to send messages to your app.
+	                // The request to your server should be authenticated if your app
+	                // is using accounts.
+//	                sendRegistrationIdToBackend();
+
+	                // For this demo: we don't need to send it because the device
+	                // will send upstream messages to a server that echo back the
+	                // message using the 'from' address in the message.
+
+	                // Persist the regID - no need to register again.
+	                storeRegistrationId(getApplicationContext(), regid);
+	            } catch (IOException ex) {
+	                msg = "Error :" + ex.getMessage();
+	                // If there is an error, don't just keep trying to register.
+	                // Require the user to click a button again, or perform
+	                // exponential back-off.
+	            }
+	            return msg;
+	        }
+
+	        @Override
+	        protected void onPostExecute(String msg) {
+//	            mDisplay.append(msg + "\n");
+	        }
+
+	    }.execute(null, null, null);
+	}
+	
 	public ListMenuFragment getMenuFragment() {
 		return this.mMenuFragment;
 	}
@@ -203,6 +327,7 @@ public class BaseSlideMenuActivity extends SlidingFragmentActivity implements
 		iconBack = (LinearLayout) findViewById(R.id.iconBack);
 		iconSearch = (LinearLayout) findViewById(R.id.iconSearch);
 		iconVtvPlus = (ImageView) findViewById(R.id.iconVtvPlus);
+		tvCategory = (TextView) findViewById(R.id.tvCategory);
 		imgAds = (ImageView) findViewById(R.id.imgAds);
 		iconInteract = (ImageView) findViewById(R.id.iconInteract);
 		iconSetting.setOnClickListener(this);
@@ -246,9 +371,9 @@ public class BaseSlideMenuActivity extends SlidingFragmentActivity implements
 			scheduleId = extras
 					.getInt(AlarmManagerBroadcastReceiver.SCHEDULE_ID);
 			try {
-				gcmBundleId = extras.getString(GCMIntentService.GCMBUNDLE_ID);
+				gcmBundleId = extras.getString(GcmIntentService.GCMBUNDLE_ID);
 				gcmBundleType = extras
-						.getString(GCMIntentService.GCMBUNDLE_TYPE);
+						.getString(GcmIntentService.GCMBUNDLE_TYPE);
 				if (gcmBundleId.equals("")) {
 					;
 				}
@@ -289,6 +414,10 @@ public class BaseSlideMenuActivity extends SlidingFragmentActivity implements
 		return imgAds;
 	}
 
+	public void setTextCategory(String text) {
+		this.tvCategory.setText(text);
+	}
+	
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
 		mFacebookUtil.onSaveInstanceState(outState);

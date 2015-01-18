@@ -1,11 +1,19 @@
 package mdn.vtvsport.util;
 
-import android.content.Intent;
-import android.os.Bundle;
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Set;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.os.Bundle;
+import android.util.Log;
+
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
 
 /**
  * Created by hieuxit on 8/20/14.
@@ -84,5 +92,36 @@ public class Utils {
 			}
 		}
 		return false;
+	}
+	
+	/**
+	 * Check the device to make sure it has the Google Play Services APK. If
+	 * it doesn't, display a dialog that allows users to download the APK from
+	 * the Google Play Store or enable it in the device's system settings.
+	 */
+	public static boolean checkPlayServices(Activity context, final int request) {
+	    int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(context);
+	    if (resultCode != ConnectionResult.SUCCESS) {
+	        if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
+	            GooglePlayServicesUtil.getErrorDialog(resultCode, context,
+	            		request).show();
+	        } else {
+//	            Log.i(TAG, "This device is not supported.");
+//	            context.finish();
+	        }
+	        return false;
+	    }
+	    return true;
+	}
+	
+	public static int getAppVersion(Context context) {
+	    try {
+	        PackageInfo packageInfo = context.getPackageManager()
+	                .getPackageInfo(context.getPackageName(), 0);
+	        return packageInfo.versionCode;
+	    } catch (NameNotFoundException e) {
+	        // should never happen
+	        throw new RuntimeException("Could not get package name: " + e);
+	    }
 	}
 }

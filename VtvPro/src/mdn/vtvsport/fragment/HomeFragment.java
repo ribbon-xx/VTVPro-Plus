@@ -95,8 +95,8 @@ public class HomeFragment extends BaseFragment implements OnTouchListener, OnCli
 	public final static String TYPE_EPISODE = "TYPE_EPISODE";
 	public static boolean IS_CHANGE_DATA = false;
 
-	public static String APP_NAME = "VTVPlus";
-	public static String APP_NAME_1 = "VTV Plus";
+	public static String APP_NAME = "VTVSport";
+	public static String APP_NAME_1 = "VTV Sport";
 
 	private Animation mAnimation;
 	private boolean isTablet = false;
@@ -327,7 +327,7 @@ public class HomeFragment extends BaseFragment implements OnTouchListener, OnCli
 	private void bindView() {
 		baseSlideMenuActivity.iconSetting.setVisibility(View.VISIBLE);
 		baseSlideMenuActivity.iconBack.setVisibility(View.GONE);
-		baseSlideMenuActivity.iconVtvPlus.setVisibility(View.GONE);
+		baseSlideMenuActivity.iconVtvPlus.setVisibility(View.VISIBLE);
 		layGallery = (RelativeLayout) view
 				.findViewById(R.id.layoutGallery);
 		layGallery.setVisibility(View.GONE);
@@ -346,6 +346,7 @@ public class HomeFragment extends BaseFragment implements OnTouchListener, OnCli
 		tabVideo = (LinearLayout) view.findViewById(R.id.tab_video);
 		tabVideo.setOnClickListener(this);
 		
+		baseSlideMenuActivity.setTextCategory("");
 		baseSlideMenuActivity.closeViewSearch();
 	}
 	
@@ -916,7 +917,7 @@ public class HomeFragment extends BaseFragment implements OnTouchListener, OnCli
 							// TODO Auto-generated method stub
 							Toast.makeText(
 									baseSlideMenuActivity,
-									"Ä�Ã£ xáº£y ra lá»—i. Vui lÃ²ng thá»­ láº¡i.",
+									"Vui lòng đăng nhập lại",
 									Toast.LENGTH_SHORT).show();
 							DialogManager.closeProgressDialog();
 						}

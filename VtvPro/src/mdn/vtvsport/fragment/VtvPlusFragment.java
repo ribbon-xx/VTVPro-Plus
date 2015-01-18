@@ -207,6 +207,7 @@ public class VtvPlusFragment extends BaseFragment {
 		gridChannel = (GridView) view.findViewById(R.id.grChannel);
 		tvChannel = (TextView) view.findViewById(R.id.tvChannel);
 		tvChannel.setText(mNameCategory);
+		baseSlideMenuActivity.setTextCategory(mNameCategory);
 		tvNoItem = (TextView) view.findViewById(R.id.tvNoItemSearch);
 		tvNoItem.setVisibility(View.GONE);
 	}

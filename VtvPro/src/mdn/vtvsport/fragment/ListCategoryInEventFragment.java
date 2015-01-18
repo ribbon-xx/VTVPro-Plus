@@ -38,6 +38,7 @@ public class ListCategoryInEventFragment extends BaseFragment {
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 
+//		baseSlideMenuActivity.setTextCategory(getString(R.string.slidemenu_event));
 		mTabName = getResources().getStringArray(R.array.tab_event);
 		if (mAdapter == null) {
 			mAdapter = new GoogleMusicAdapter(getActivity()
@@ -48,7 +49,7 @@ public class ListCategoryInEventFragment extends BaseFragment {
 		
 		pager.setAdapter(mAdapter);
 		pager.setCurrentItem(0);
-//		pager.setOffscreenPageLimit(3);
+		pager.setOffscreenPageLimit(1);
 		indicator.setViewPager(pager);
 		
 		indicator.setOnPageChangeListener(new OnPageChangeListener() {
@@ -72,18 +73,18 @@ public class ListCategoryInEventFragment extends BaseFragment {
 			}
 
 			@Override
-			public void onPageScrollStateChanged(int arg0) {
-				// TODO Auto-generated method stub
+			public void onPageScrollStateChanged(int position) {
 
 			}
 
 			@Override
-			public void onPageScrolled(int arg0, float arg1, int arg2) {
-				// TODO Auto-generated method stub
-
+			public void onPageScrolled(int position, float arg1, int arg2) {
+				baseSlideMenuActivity
+				.setTextCategory(mTabName[position % mTabName.length]);
 			}
 
 		});
+		
 	}
 
 	class GoogleMusicAdapter extends FragmentPagerAdapter {
@@ -105,6 +106,8 @@ public class ListCategoryInEventFragment extends BaseFragment {
 
 		@Override
 		public CharSequence getPageTitle(int position) {
+//			baseSlideMenuActivity
+//			.setTextCategory(mTabName[position % mTabName.length].toUpperCase());
 			return mTabName[position % mTabName.length].toUpperCase();
 		}
 

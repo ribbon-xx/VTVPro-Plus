@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        android:src="@drawable/menu_icon_sukien" />
+        />
 
     <TextView
         android:id="@+id/tv_groupTitle"

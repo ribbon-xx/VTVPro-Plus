@@ -33,6 +33,18 @@ public class RankingsFragment extends BaseFragment {
     private RankingsListViewAdapter rankingAdapter;
     private ListView lvRankings;
     
+    private boolean isOpenSlideMenu = false;
+    
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+    	super.onCreate(savedInstanceState);
+    	
+    	Bundle bundle = getArguments();
+    	if (bundle != null) {
+        	isOpenSlideMenu = bundle.getBoolean("isOpenSlideMenuRanking");
+        }
+    	
+    }
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -44,15 +56,25 @@ public class RankingsFragment extends BaseFragment {
 		super.onActivityCreated(savedInstanceState);
 		spAdapter = (Spinner) getView().findViewById(R.id.sp_adapter);
 		
-//		spAdapter.setOnItemClickListener(new OnItemClickListener() {
-//		});
-
 		getListLeagues();
 		getListRankings(String.valueOf(1));
 		
 		lvRankings = (ListView) getView().findViewById(R.id.lv_rankings);
-//		arrRankings = new ArrayList<RankingInfo>();
-		// nap data
+		if (isOpenSlideMenu) {
+			baseSlideMenuActivity
+			.setTextCategory(getString(R.string.slidemenu_xephang));
+		}
+		
+	}
+	
+	@Override
+	protected void initUiTabbar() {
+		super.initUiTabbar();
+
+//		baseSlideMenuActivity.iconInteract.setVisibility(View.GONE);
+		baseSlideMenuActivity.iconSetting.setVisibility(View.GONE);
+		baseSlideMenuActivity.iconBack.setVisibility(View.VISIBLE);
+		baseSlideMenuActivity.iconVtvPlus.setVisibility(View.GONE);
 	}
 	
 	private void getListLeagues() {

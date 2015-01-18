@@ -45,6 +45,8 @@ public class CategoryVideoFragment extends BaseFragment {
 		indicator.setVisibility(View.GONE);
 		pager.setVisibility(View.INVISIBLE);
 		
+		baseSlideMenuActivity
+		.setTextCategory(getString(R.string.slidemenu_video));
 		getListCategoryInVideo();
 
 		indicator.setOnPageChangeListener(new OnPageChangeListener() {
@@ -74,9 +76,10 @@ public class CategoryVideoFragment extends BaseFragment {
 			}
 
 			@Override
-			public void onPageScrolled(int arg0, float arg1, int arg2) {
-				// TODO Auto-generated method stub
-
+			public void onPageScrolled(int position, float arg1, int arg2) {
+				if(arrMenuTmp!= null && arrMenuTmp.get(position) !=null)
+				baseSlideMenuActivity
+				.setTextCategory(arrMenuTmp.get(position).name);
 			}
 
 		});

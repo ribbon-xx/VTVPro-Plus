@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">VTV Plus PRO</string>
+    <string name="app_name">VTV Sport</string>
     <string name="fb_id">1390679144514806</string>
     <string name="ua_id">UA-38068003-2</string>
     <string name="action_settings">Settings</string>
@@ -85,6 +85,7 @@
     <string name="options_unregister">Unregister</string>
     <string name="options_clear">Clear</string>
     <string name="options_exit">Exit</string>
+    <string name="gcm_not_valid_google_play_services">Máy bạn chưa cài google play services</string>
 
     <!-- Menu -->
     <string name="taikhoan">Tài khoản</string>
@@ -94,9 +95,9 @@
     <string name="danhmuc">Danh mục</string>
     <string name="slidemenu_event">Sự kiện</string>
     <string name="slidemenu_lichthidau">Lịch thi đấu</string>
-    <string name="slidemenu_livescore">Livescore</string>
+    <string name="slidemenu_livescore">Kết quả</string>
     <string name="slidemenu_xephang">Xếp hạng</string>
-    <string name="slidemenu_video">VIDEO</string>
+    <string name="slidemenu_video">Video</string>
     <string name="slidemenu_channel">Kênh</string>
     <string name="slidemenu_huy_dk">Hủy đăng ký</string>
     

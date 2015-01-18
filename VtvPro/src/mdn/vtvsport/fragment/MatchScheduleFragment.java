@@ -4,6 +4,8 @@ package mdn.vtvsport.fragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.android.gms.internal.bn;
+
 import mdn.vtvsport.R;
 import mdn.vtvsport.adapter.MatchScheduleAdapter;
 import mdn.vtvsport.common.DialogManager;
@@ -58,9 +60,14 @@ public class MatchScheduleFragment extends BaseFragment {
     private List<MatchScheduleMenuObject> mListOfMenu;
     private MatchScheduleMenuObject currentLeagueObject;
 
+    private boolean isOpenSlideMenu = false;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+        	isOpenSlideMenu = bundle.getBoolean("isOpenSlideMenu");
+        }
         setRetainInstance(true);
 
         mListOfOngoing = new ArrayList<MatchScheduleModel>();
@@ -96,9 +103,23 @@ public class MatchScheduleFragment extends BaseFragment {
         fragment_list_match_schedule_league_past_list.setExpanded(true);
 
         requestMenuLeague();
+        if (isOpenSlideMenu) {
+          baseSlideMenuActivity
+    		.setTextCategory(getString(R.string.slidemenu_lichthidau));
+        }
         return rootView;
     }
 
+    @Override
+	protected void initUiTabbar() {
+		super.initUiTabbar();
+
+//		baseSlideMenuActivity.iconInteract.setVisibility(View.GONE);
+		baseSlideMenuActivity.iconSetting.setVisibility(View.GONE);
+		baseSlideMenuActivity.iconBack.setVisibility(View.VISIBLE);
+		baseSlideMenuActivity.iconVtvPlus.setVisibility(View.GONE);
+	}
+    
     AdapterView.OnItemSelectedListener chooseLeague = new AdapterView.OnItemSelectedListener() {
         @Override
         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {

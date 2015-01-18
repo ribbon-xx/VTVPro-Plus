@@ -49,6 +49,7 @@ public class ListMenuFragment extends BaseFragment implements OnClickListener, O
 	private AdapterMenuLeft apdateMenuLeft;
 	private ArrayList<objMenu> arrMenuTmp;
 	
+	private int mCurrentTab = -1;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -83,10 +84,6 @@ public class ListMenuFragment extends BaseFragment implements OnClickListener, O
 		imvProfile = (ImageView) view.findViewById(R.id.imvProfile);
 		tvProfile = (TextView) view.findViewById(R.id.tvNameLogin);
 		
-		
-//		ArrayList<objMenu> tmpVideo = new ArrayList<objMenu>();
-//		tmpVideo = callCategoryVideoMenuApi();
-		
 		// group header
 		arrMenu.add(new objMenu(1, getString(R.string.slidemenu_event), R.drawable.menu_icon_sukien,true));
 		arrMenu.add(new objMenu(2, getString(R.string.slidemenu_lichthidau), false));
@@ -95,11 +92,8 @@ public class ListMenuFragment extends BaseFragment implements OnClickListener, O
 		
 		arrMenu.add(new objMenu(5, getString(R.string.slidemenu_video), R.drawable.menu_icon_video, true));
 //		// add sub category video
-//		for(int i=0; i<tmpVideo.size(); i++) {
-//			arr.add(new objMenu(i, tmpVideo.get(i).name, false));
-//		}
 		
-		arrMenu.add(new objMenu(6, getString(R.string.slidemenu_channel), true));
+		arrMenu.add(new objMenu(6, getString(R.string.slidemenu_channel), R.drawable.menu_icon_kenhtv, true));
 		arrMenu.add(new objMenu(7, getString(R.string.slidemenu_huy_dk), false));
 		callCategoryVideoMenuApi();
 		
@@ -208,6 +202,7 @@ public class ListMenuFragment extends BaseFragment implements OnClickListener, O
 	}
 
 	private void actionRegisterClick() {
+		baseSlideMenuActivity.setTextCategory(getString(R.string.slidemenu_register));
 		Fragment unregister = new RegisterFragment();
 		FragmentManager fm = getActivity().getSupportFragmentManager();
 		Fragment fg = fm.findFragmentById(R.id.layoutContent);
@@ -261,7 +256,7 @@ public class ListMenuFragment extends BaseFragment implements OnClickListener, O
 				
 				try {
 					apdateMenuLeft.removeItem(arrMenu.size()-1);
-					apdateMenuLeft.removeItem(arrMenu.size()-2);
+					apdateMenuLeft.removeItem(arrMenu.size()-1);
 					lvVideos.removeAllViewsInLayout();
 					apdateMenuLeft.notifyDataSetChanged();
 					
@@ -280,7 +275,7 @@ public class ListMenuFragment extends BaseFragment implements OnClickListener, O
 						arrMenu.add(new objMenu(100+id, name, false));
 					}
 					
-					arrMenu.add(new objMenu(6, getString(R.string.slidemenu_channel), true));
+					arrMenu.add(new objMenu(6, getString(R.string.slidemenu_channel),  R.drawable.menu_icon_kenhtv, true));
 					arrMenu.add(new objMenu(7, getString(R.string.slidemenu_huy_dk), false));
 					apdateMenuLeft.notifyDataSetChanged();
 					
@@ -305,7 +300,9 @@ public class ListMenuFragment extends BaseFragment implements OnClickListener, O
 		// sub video
 		if (arrMenuTmp!= null && arrMenuTmp.size() > 0) {
 			for (int i=0; i<arrMenuTmp.size(); i++) {
-				if (menu.id == (100+ arrMenuTmp.get(i).id)) {
+				if (menu.id == (100+ arrMenuTmp.get(i).id) && mCurrentTab != (100+ arrMenuTmp.get(i).id)) {
+					mCurrentTab = (100+ arrMenuTmp.get(i).id); 
+//					baseSlideMenuActivity.setTextCategory(arrMenuTmp.get(i).name);
 					Bundle bundle = new Bundle();
 					bundle.putInt(VtvPlusFragment.KEY_TYPE_ITEM_VTV, 1);
 					bundle.putString(VtvPlusFragment.KEY_ID_ITEM_VTV, String.valueOf(arrMenuTmp.get(i).id));
@@ -319,52 +316,81 @@ public class ListMenuFragment extends BaseFragment implements OnClickListener, O
 			}
 		}
 		
-		// video
-		if (menu.id == 5) {
-			Fragment categoryVideo = new CategoryVideoFragment();
-			baseSlideMenuActivity.switchContent(categoryVideo, true);
-			baseSlideMenuActivity.getSlidingMenu().toggle();
-		}
-		
-		if (menu.id == 6) {
-			// channel
-			Bundle bundle = new Bundle();
-			bundle.putInt(VtvPlusFragment.KEY_TYPE_ITEM_VTV, 0);
-			bundle.putString(VtvPlusFragment.KEY_NAME_ITEM_VTV, getString(R.string.slidemenu_channel));
-			VtvPlusFragment mVtvFragment = new VtvPlusFragment();
-			mVtvFragment.setArguments(bundle);
-			baseSlideMenuActivity.switchContent(mVtvFragment, true);
-			baseSlideMenuActivity.getSlidingMenu().toggle();
-		}
-		
-		// ranking
-		if (menu.id == 4) {
-			Fragment ranking = new RankingsFragment();
-			baseSlideMenuActivity.switchContent(ranking, true);
-			baseSlideMenuActivity.getSlidingMenu().toggle();
-		}
-		
-		// schedule
-		if (menu.id == 2) {
-			Fragment schedule = new MatchScheduleFragment();
-			baseSlideMenuActivity.switchContent(schedule, true);
-			baseSlideMenuActivity.getSlidingMenu().toggle();
-		}
-		
 		// event
-		if (menu.id == 1) {
+		if (menu.id == 1 && mCurrentTab !=1) {
+			mCurrentTab = 1;
 			Fragment event = new ListCategoryInEventFragment();
 			baseSlideMenuActivity.switchContent(event, true);
 			baseSlideMenuActivity.getSlidingMenu().toggle();
 		}
 		
-		// Cancel to register
-		if (menu.id == 7) {
+		// schedule
+		if (menu.id == 2 && mCurrentTab != 2) {
+			mCurrentTab = 2;
+			Fragment schedule = new MatchScheduleFragment();
+			Bundle bundle = new Bundle();
+			bundle.putBoolean("isOpenSlideMenu", true);
+			schedule.setArguments(bundle);
+			
+			baseSlideMenuActivity.switchContent(schedule, true);
+			baseSlideMenuActivity.getSlidingMenu().toggle();
+		}
+				
+		// livescore
+		if (menu.id == 3 && mCurrentTab !=3) {
+			mCurrentTab = 3;
+//			baseSlideMenuActivity.setTextCategory(getString(R.string.slidemenu_event));
+			Fragment livescore = new LiveScoreFragment();
+			Bundle bundle = new Bundle();
+			bundle.putBoolean("isOpenSlideMenuLivescore", true);
+			livescore.setArguments(bundle);
+			
+			baseSlideMenuActivity.switchContent(livescore, true);
+			baseSlideMenuActivity.getSlidingMenu().toggle();
+		}
+		
+		// ranking
+		if (menu.id == 4 && mCurrentTab != 4) {
+			mCurrentTab = 4;
+			Fragment ranking = new RankingsFragment();
+			Bundle bundle = new Bundle();
+			bundle.putBoolean("isOpenSlideMenuRanking", true);
+			ranking.setArguments(bundle);
+			
+			baseSlideMenuActivity.switchContent(ranking, true);
+			baseSlideMenuActivity.getSlidingMenu().toggle();
+		}
+		
+		// video
+		if (menu.id == 5 && mCurrentTab != 5) {
+			mCurrentTab = 5;
+			Fragment categoryVideo = new CategoryVideoFragment();
+			baseSlideMenuActivity.switchContent(categoryVideo, true);
+			baseSlideMenuActivity.getSlidingMenu().toggle();
+		}
+
+		if (menu.id == 6 && mCurrentTab != 6) {
+			// channel
+			mCurrentTab = 6;
+//			baseSlideMenuActivity
+//					.setTextCategory(getString(R.string.slidemenu_channel));
+			Bundle bundle = new Bundle();
+			bundle.putInt(VtvPlusFragment.KEY_TYPE_ITEM_VTV, 0);
+			bundle.putString(VtvPlusFragment.KEY_NAME_ITEM_VTV,
+					getString(R.string.slidemenu_channel));
+			VtvPlusFragment mVtvFragment = new VtvPlusFragment();
+			mVtvFragment.setArguments(bundle);
+			baseSlideMenuActivity.switchContent(mVtvFragment, true);
+			baseSlideMenuActivity.getSlidingMenu().toggle();
+		}
+				
+		// unregister
+		if (menu.id == 7  && mCurrentTab !=7) {
+			mCurrentTab = 7;
 			Fragment unregister = new UnregisterFragment();
 			FragmentManager fm = getActivity().getSupportFragmentManager();
 			Fragment fg = fm.findFragmentById(R.id.layoutContent);
 			if (fg instanceof UnregisterFragment) {
-				
 			} else {
 				baseSlideMenuActivity.switchContent(unregister, true);
 			}

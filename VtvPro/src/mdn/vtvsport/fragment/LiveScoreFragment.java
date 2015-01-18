@@ -43,12 +43,18 @@ public class LiveScoreFragment extends BaseFragment {
 
     private Handler handler;
     private boolean isTheFirstTime;
-
+    private boolean isOpenSlideMenu = false;
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
-
+        
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+        	isOpenSlideMenu = bundle.getBoolean("isOpenSlideMenuLivescore");
+        }
+        
         mListOfCurrent = new ArrayList<MatchScheduleModel>();
         mListOfResult = new ArrayList<MatchScheduleModel>();
         mListOfFuture = new ArrayList<MatchScheduleModel>();
@@ -75,9 +81,23 @@ public class LiveScoreFragment extends BaseFragment {
         fragment_live_score_future_list.setExpanded(true);
 
         requestData();
+        if (isOpenSlideMenu) {
+        	 baseSlideMenuActivity
+     		.setTextCategory(getString(R.string.slidemenu_livescore));
+        }
         return rootView;
     }
 
+    @Override
+	protected void initUiTabbar() {
+		super.initUiTabbar();
+
+//		baseSlideMenuActivity.iconInteract.setVisibility(View.GONE);
+		baseSlideMenuActivity.iconSetting.setVisibility(View.GONE);
+		baseSlideMenuActivity.iconBack.setVisibility(View.VISIBLE);
+		baseSlideMenuActivity.iconVtvPlus.setVisibility(View.GONE);
+	}
+    
     private void requestData() {
         if(isTheFirstTime) {
             DialogManager.showSimpleProgressDialog(baseSlideMenuActivity);

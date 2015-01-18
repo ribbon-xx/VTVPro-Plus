@@ -15,88 +15,93 @@
  */
 package mdn.vtvsport;
 
+import com.google.android.gms.gcm.GoogleCloudMessaging;
+
 import mdn.vtvsport.common.ParserManager;
 import mdn.vtvsport.fragment.HomeFragment;
-import mdn.vtvsport.gcm.ServerUtilities;
-import mdn.vtvsport.network.ApiManager;
 import mdn.vtvsport.object.GCMInfo;
-import mdn.vtvsport.util.DeviceUtil;
+import android.app.IntentService;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
 import android.text.TextUtils;
-import android.util.Log;
-
-import com.google.android.gcm.GCMBaseIntentService;
-import com.google.android.gcm.GCMRegistrar;
+import android.widget.Toast;
 
 /**
  * IntentService responsible for handling GCM messages.
  */
-public class GCMIntentService extends GCMBaseIntentService {
+public class GcmIntentService extends IntentService {
+    public static final int NOTIFICATION_ID = 1;
+    private NotificationManager mNotificationManager;
+    NotificationCompat.Builder builder;
 
-	public static final String GCMBUNDLE_ID = "GCMBUNDLE_ID";
+    public static final String GCMBUNDLE_ID = "GCMBUNDLE_ID";
 	public static final String GCMBUNDLE_TYPE = "GCMBUNDLE_TYPE";
+	
+    public GcmIntentService() {
+        super("GcmIntentService");
+    }
 
-	public GCMIntentService() {
-		super(ServerUtilities.SENDER_ID);
-	}
+    @Override
+    protected void onHandleIntent(Intent intent) {
+        Bundle extras = intent.getExtras();
+        GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(this);
+        // The getMessageType() intent parameter must be the intent you received
+        // in your BroadcastReceiver.
+        String messageType = gcm.getMessageType(intent);
 
-	@Override
-	protected void onRegistered(Context context, String registrationId) {
-		Log.i(TAG, "Device registered: regId = " + registrationId);
-		ServerUtilities.register(context, registrationId);
+        if (!extras.isEmpty()) {  // has effect of unparcelling Bundle
+            /*
+             * Filter messages based on message type. Since it is likely that GCM
+             * will be extended in the future with new message types, just ignore
+             * any message types you're not interested in, or that you don't
+             * recognize.
+             */
+//        	Toast.makeText(getApplicationContext(), "Received message gcm", Toast.LENGTH_LONG).show();
+    		// String message = getString(R.string.gcm_message);
+    		String message = intent.getExtras().getString("message");
+    		GCMInfo info = ParserManager.parserGCMResponse(message);
+    		if(TextUtils.isEmpty(info.getMessage())){
+    			return;
+    		}
+    		// notifies user
+    		generateNotification(getApplicationContext(), info);
+    		
+//            if (GoogleCloudMessaging.
+//                    MESSAGE_TYPE_SEND_ERROR.equals(messageType)) {
+//                sendNotification("Send error: " + extras.toString());
+//            } else if (GoogleCloudMessaging.
+//                    MESSAGE_TYPE_DELETED.equals(messageType)) {
+//                sendNotification("Deleted messages on server: " +
+//                        extras.toString());
+//            // If it's a regular GCM message, do some work.
+//            } else if (GoogleCloudMessaging.
+//                    MESSAGE_TYPE_MESSAGE.equals(messageType)) {
+//                // This loop represents the service doing some work.
+//                for (int i=0; i<5; i++) {
+//                    Log.i(TAG, "Working... " + (i+1)
+//                            + "/5 @ " + SystemClock.elapsedRealtime());
+//                    try {
+//                        Thread.sleep(5000);
+//                    } catch (InterruptedException e) {
+//                    }
+//                }
+//                Log.i(TAG, "Completed work @ " + SystemClock.elapsedRealtime());
+//                // Post notification of received message.
+//                sendNotification("Received: " + extras.toString());
+//                Log.i(TAG, "Received: " + extras.toString());
+//            }
+        }
+        // Release the wake lock provided by the WakefulBroadcastReceiver.
+        GcmBroadcastReceiver.completeWakefulIntent(intent);
+    }
 
-	}
-
-	@Override
-	protected void onUnregistered(Context context, String registrationId) {
-		Log.i(TAG, "Device unregistered");
-		if (GCMRegistrar.isRegisteredOnServer(context)) {
-			ServerUtilities.unregister(context, registrationId);
-		} else {
-			// This callback results from the call to unregister made on
-			// ServerUtilities when the registration to the server failed.
-			Log.i(TAG, "Ignoring unregister callback");
-		}
-	}
-
-	@Override
-	protected void onMessage(Context context, Intent intent) {
-
-		Log.i(TAG, "Received message");
-		// String message = getString(R.string.gcm_message);
-		String message = intent.getExtras().getString("message");
-		GCMInfo info = ParserManager.parserGCMResponse(message);
-		if(TextUtils.isEmpty(info.getMessage())){
-			return;
-		}
-		// notifies user
-		generateNotification(context, info);
-
-		callLogPush(context, DeviceUtil.getDeviceId(context), info.getMessageId());
-	}
-
-	@Override
-	public void onError(Context context, String errorId) {
-		Log.i(TAG, "Received error: " + errorId);
-	}
-
-	@Override
-	protected boolean onRecoverableError(Context context, String errorId) {
-		// log message
-		Log.i(TAG, "Received recoverable error: " + errorId);
-		return super.onRecoverableError(context, errorId);
-	}
-
-	/**
-	 * Issues a notification to inform the user that server has sent a message.
-	 */
-	private static void generateNotification(Context context, GCMInfo info) {
+    private static void generateNotification(Context context, GCMInfo info) {
 		/*
 		int icon = R.drawable.icon_small;
 		long when = System.currentTimeMillis();
@@ -152,9 +157,5 @@ public class GCMIntentService extends GCMBaseIntentService {
 		notification.flags |= Notification.FLAG_NO_CLEAR
 				| Notification.FLAG_AUTO_CANCEL;
 		mNotificationManager.notify(id, notification);
-	}
-	
-	private void callLogPush(Context context, String deviceId, String messId) {
-		ApiManager.callLogPush(context, null, deviceId, messId);
 	}
 }

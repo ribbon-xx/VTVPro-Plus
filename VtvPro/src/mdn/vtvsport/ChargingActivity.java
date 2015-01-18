@@ -654,8 +654,10 @@ public class ChargingActivity extends BaseSlideMenuActivity  {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		HLog.i("Charging activity result: " + requestCode + ", " + resultCode);
-		Bundle args = data.getExtras();
-		Utils.lookUp(args);
+		if (data != null) {
+			Bundle args = data.getExtras();
+			Utils.lookUp(args);
+		}
 	}
 
 //	class CheckAppIdRunnable implements Runnable {

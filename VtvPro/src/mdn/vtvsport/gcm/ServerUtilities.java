@@ -20,30 +20,29 @@ import mdn.vtvsport.network.IApiCallback;
 import android.content.Context;
 import android.util.Log;
 
-import com.google.android.gcm.GCMRegistrar;
 
 public final class ServerUtilities {
 
-	public static final String SENDER_ID = "237993844903";
+	public static final String SENDER_ID = "70351511992";
 
-	public static boolean register(final Context context, final String regId) {
-		try {
-			postRegistrationId(context, regId);
-			GCMRegistrar.setRegisteredOnServer(context, true);
-			return true;
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return false;
-	}
-
-	public static void unregister(final Context context, final String regId) {
-		try {
-			postRegistrationId(context, regId);
-			GCMRegistrar.setRegisteredOnServer(context, false);
-		} catch (Exception e) {
-		}
-	}
+//	public static boolean register(final Context context, final String regId) {
+//		try {
+//			postRegistrationId(context, regId);
+//			GCMRegistrar.setRegisteredOnServer(context, true);
+//			return true;
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		return false;
+//	}
+//
+//	public static void unregister(final Context context, final String regId) {
+//		try {
+//			postRegistrationId(context, regId);
+//			GCMRegistrar.setRegisteredOnServer(context, false);
+//		} catch (Exception e) {
+//		}
+//	}
 
 	public static void postRegistrationId(final Context context,
 			final String regId) {

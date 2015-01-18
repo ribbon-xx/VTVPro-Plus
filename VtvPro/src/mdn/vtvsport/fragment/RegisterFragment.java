@@ -15,6 +15,8 @@ import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 public class RegisterFragment extends BaseFragment {
 
 	private ImageView ivRegister;
+	private int mTypeCategory = 0; //0_channel,1_vod,2_series of vod, 3_search,
+	// -2 favourist; -1 listnew; -3 listhot
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,4 +46,19 @@ public class RegisterFragment extends BaseFragment {
 		
 		ImageUtility.loadFullBitmapFromUrl(getActivity(), imageUri, ivRegister, options);
 	}
+	
+	@Override
+	protected void initUiTabbar() {
+		// TODO Auto-generated method stub
+		super.initUiTabbar();
+
+//		baseSlideMenuActivity.iconInteract.setVisibility(View.GONE);
+		baseSlideMenuActivity.iconSetting.setVisibility(View.GONE);
+		baseSlideMenuActivity.iconBack.setVisibility(View.VISIBLE);
+		baseSlideMenuActivity.iconVtvPlus.setVisibility(View.GONE);
+		if (mTypeCategory != 3) {
+			baseSlideMenuActivity.closeViewSearch();
+		}
+	}
+
 }
